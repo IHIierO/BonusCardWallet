@@ -8,17 +8,24 @@
 import SwiftUI
 
 struct Home: View {
+    @State private var results = ["one","two"]
     var body: some View {
         VStack {
             HeaderView()
-            CardView()
-                .padding(15)
+            List(results, id: \.self) {item in
+                CardView()
+            }
+            .onAppear{
+                GetAllCardsService.shared.getAllCards()
+            }
+            
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .background {
             Color(hex: "efefef")
                 .ignoresSafeArea()
         }
+        
     }
 }
 

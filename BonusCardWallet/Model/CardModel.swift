@@ -40,5 +40,3 @@ struct MobileAppDashboard: Codable {
    let highlightTextColor: String
    let accentColor: String
 }
-
-
