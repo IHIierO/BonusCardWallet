@@ -10,33 +10,34 @@ import Foundation
 final class GetAllCardsService {
     static let shared = GetAllCardsService()
     
-    var cards: [CardModel] = []
-    
-    func getAllCards() {
+    func getAllCards(endpoint: Endpoint, completion: @escaping (Result<[CardModel], Error>) -> Void) {
         print("Start")
         let parameters = "{\n\t\"offset\": 0\n}"
         let postData = parameters.data(using: .utf8)
+        
+        guard let url = URL(string: "http://dev.bonusmoney.pro/mobileapp/\(endpoint)") else {
+            return
+        }
 
-        var request = URLRequest(url: URL(string: "http://dev.bonusmoney.pro/mobileapp/getAllCompanies")!,timeoutInterval: Double.infinity)
+        var request = URLRequest(url: url,timeoutInterval: Double.infinity)
         request.addValue("123", forHTTPHeaderField: "TOKEN")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
         request.httpMethod = "POST"
         request.httpBody = postData
-
+        
         let task = URLSession.shared.dataTask(with: request) { data, _, error in
-          guard let data = data else {
-            print(String(describing: error))
+          guard let data = data, error == nil else {
+              completion(.failure(error ?? ServiceError.filedToGetData))
             return
           }
           
             do {
-               // print(String(data: data, encoding: .utf8)!)
                 let result = try JSONDecoder().decode([CardModel].self, from: data)
-                self.cards = result
-                print("Result: \(self.cards)")
+                completion(.success(result))
             }
             catch {
+                completion(.failure(error))
                 print("Error: \(String(describing: error))")
             }
         }

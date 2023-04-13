@@ -10,7 +10,7 @@ import SwiftUI
 struct RollingText: View {
     var font: Font = .title
     var weight: Font.Weight = .regular
-    @Binding var value: Int
+    var value: Int
     @State var animationRange: [Int] = []
     var body: some View {
         HStack(spacing: 0) {

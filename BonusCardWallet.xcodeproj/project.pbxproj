@@ -20,6 +20,9 @@
 		39D1FDFA29E80F6A001825D3 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FDF929E80F6A001825D3 /* CardModel.swift */; };
 		39D1FDFD29E813CB001825D3 /* GetAllCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FDFC29E813CB001825D3 /* GetAllCards.swift */; };
 		39D1FDFF29E8165F001825D3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FDFE29E8165F001825D3 /* NetworkManager.swift */; };
+		39D1FE0229E84D3C001825D3 /* CardLogoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FE0129E84D3C001825D3 /* CardLogoImageView.swift */; };
+		39D1FE0629E851C7001825D3 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FE0529E851C7001825D3 /* Endpoint.swift */; };
+		39D1FE0829E859A0001825D3 /* HUDProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FE0729E859A0001825D3 /* HUDProgressView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		39D1FDFC29E813CB001825D3 /* GetAllCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllCards.swift; sourceTree = "<group>"; };
 		39D1FDFE29E8165F001825D3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		39D1FE0029E823D8001825D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		39D1FE0129E84D3C001825D3 /* CardLogoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLogoImageView.swift; sourceTree = "<group>"; };
+		39D1FE0529E851C7001825D3 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		39D1FE0729E859A0001825D3 /* HUDProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDProgressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,8 @@
 				39D1FDEC29E7EC46001825D3 /* HeaderView.swift */,
 				39D1FDF129E7F008001825D3 /* CardView.swift */,
 				39D1FDF329E7FC92001825D3 /* RollingText.swift */,
+				39D1FE0129E84D3C001825D3 /* CardLogoImageView.swift */,
+				39D1FE0729E859A0001825D3 /* HUDProgressView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -132,6 +140,7 @@
 			children = (
 				39D1FDFC29E813CB001825D3 /* GetAllCards.swift */,
 				39D1FDFE29E8165F001825D3 /* NetworkManager.swift */,
+				39D1FE0529E851C7001825D3 /* Endpoint.swift */,
 			);
 			path = APIClient;
 			sourceTree = "<group>";
@@ -206,6 +215,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39D1FE0829E859A0001825D3 /* HUDProgressView.swift in Sources */,
+				39D1FE0629E851C7001825D3 /* Endpoint.swift in Sources */,
 				39D1FDF029E7ED2F001825D3 /* Color+Hex.swift in Sources */,
 				39D1FDDE29E7E7B9001825D3 /* ContentView.swift in Sources */,
 				39D1FDFD29E813CB001825D3 /* GetAllCards.swift in Sources */,
@@ -217,6 +228,7 @@
 				39D1FDF429E7FC92001825D3 /* RollingText.swift in Sources */,
 				39D1FDF229E7F008001825D3 /* CardView.swift in Sources */,
 				39D1FDED29E7EC46001825D3 /* HeaderView.swift in Sources */,
+				39D1FE0229E84D3C001825D3 /* CardLogoImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

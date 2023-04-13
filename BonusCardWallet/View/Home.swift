@@ -8,24 +8,44 @@
 import SwiftUI
 
 struct Home: View {
-    @State private var results = ["one","two"]
+    @State private var cards: [CardModel] = []
+    @State private var isLoading = false
     var body: some View {
-        VStack {
-            HeaderView()
-            List(results, id: \.self) {item in
-                CardView()
+        ZStack {
+            VStack {
+                HeaderView()
+                
+                List(cards, id: \.company.companyId) {card in
+                    CardView(card: card)
+                        .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
+                }
+                .onAppear{
+                    isLoading = true
+                    RequestsFactory.shared.createRequest(for: .getAllCompaniesLong) { result in
+                        switch result {
+                        case .success(let cards):
+                            DispatchQueue.main.async {
+                                self.isLoading = false
+                                self.cards = cards
+                            }
+                            print("Cards: \(cards)")
+                        case .failure(let error):
+                            print("Error: \(String(describing: error))")
+                        }
+                    }
+                }
+                .listStyle(.grouped)
             }
-            .onAppear{
-                GetAllCardsService.shared.getAllCards()
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            .background {
+                Color(hex: "efefef")
+                    .ignoresSafeArea()
             }
-            
+            if isLoading { HUDProgressView(placeHolder: "Please Wait", show: $isLoading)
+                    .padding(100)
+            }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        .background {
-            Color(hex: "efefef")
-                .ignoresSafeArea()
-        }
-        
     }
 }
 
