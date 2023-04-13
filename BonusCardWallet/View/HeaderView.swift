@@ -1,0 +1,28 @@
+//
+//  HeaderView.swift
+//  BonusCardWallet
+//
+//  Created by Artem Vorobev on 13.04.2023.
+//
+
+import SwiftUI
+
+struct HeaderView: View {
+    var body: some View {
+        Text("Управление картами")
+            .font(.system(size: 24))
+            .foregroundColor(Color(hex: "2688eb"))
+            .frame(maxWidth: .infinity, alignment: .top)
+            .padding(15)
+            .background {
+                Color(hex: "ffffff")
+                    .ignoresSafeArea()
+            }
+    }
+}
+
+struct HeaderView_Previews: PreviewProvider {
+    static var previews: some View {
+        HeaderView()
+    }
+}
