@@ -24,6 +24,7 @@
 		39D1FE0629E851C7001825D3 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FE0529E851C7001825D3 /* Endpoint.swift */; };
 		39D1FE0829E859A0001825D3 /* HUDProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FE0729E859A0001825D3 /* HUDProgressView.swift */; };
 		39D1FE0A29E98168001825D3 /* ServerResponseMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FE0929E98168001825D3 /* ServerResponseMessageModel.swift */; };
+		39D1FE0C29E9AE06001825D3 /* AlertsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FE0B29E9AE06001825D3 /* AlertsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		39D1FE0529E851C7001825D3 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		39D1FE0729E859A0001825D3 /* HUDProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDProgressView.swift; sourceTree = "<group>"; };
 		39D1FE0929E98168001825D3 /* ServerResponseMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponseMessageModel.swift; sourceTree = "<group>"; };
+		39D1FE0B29E9AE06001825D3 /* AlertsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			children = (
 				39D1FDF929E80F6A001825D3 /* CardModel.swift */,
 				39D1FE0929E98168001825D3 /* ServerResponseMessageModel.swift */,
+				39D1FE0B29E9AE06001825D3 /* AlertsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				39D1FDFD29E813CB001825D3 /* GetAllCards.swift in Sources */,
 				39D1FDEB29E7EB9D001825D3 /* Home.swift in Sources */,
 				39D1FDFF29E8165F001825D3 /* NetworkManager.swift in Sources */,
+				39D1FE0C29E9AE06001825D3 /* AlertsModel.swift in Sources */,
 				39D1FDF729E80715001825D3 /* CardViewViewModel.swift in Sources */,
 				39D1FDDC29E7E7B9001825D3 /* BonusCardWalletApp.swift in Sources */,
 				39D1FDFA29E80F6A001825D3 /* CardModel.swift in Sources */,

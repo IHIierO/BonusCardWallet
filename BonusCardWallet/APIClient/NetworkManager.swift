@@ -8,21 +8,28 @@
 import UIKit
 import SwiftUI
 
-enum ServiceError: Error {
-    case filedToCreateRequest
-    case filedToGetData
-}
+enum NetworkError: LocalizedError, Identifiable {
+    case notFound
+    case serverError(message: String)
+    case underlyingError(Error)
+    case unknown
 
-enum ResponseError: Error {
-    case badRequest
-    case unauthorised
-    case fatalError
+    var id: String { localizedDescription }
+
+    var errorDescription: String? {
+        switch self {
+        case .notFound: return "Not found"
+        case .serverError(let message): return message
+        case .underlyingError(let error): return error.localizedDescription
+        case .unknown: return "Unknown error"
+        }
+    }
 }
 
 class RequestsFactory {
     static let shared = RequestsFactory()
     
-    public func createRequest(for request: Endpoint, completion: @escaping (Result<[CardModel], Error>) -> Void) {
+    public func createRequest(for request: Endpoint, completion: @escaping (Result<[CardModel], NetworkError>) -> Void) {
         switch request {
         case .getAllCompanies:
             GetAllCardsService.shared.getAllCards(endpoint: .getAllCompanies, completion: completion)

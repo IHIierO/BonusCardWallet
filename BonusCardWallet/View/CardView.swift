@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct CardView: View {
-    @StateObject private var viewModel = CardViewViewModel()
+    @EnvironmentObject var viewModel: CardViewViewModel
+    @State var showAlert: Bool = false
     let card: CardModel
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
             HStack(spacing: 4) {
@@ -55,9 +57,8 @@ struct CardView: View {
             Divider()
             HStack(spacing: 50) {
                 Button {
-//                    viewModel.alertIdentifier = AlertIdentifier(id: .myAlerts)
-//                    viewModel.alertType = .yey
-//                    viewModel.showAlert.toggle()
+                    showAlert = true
+                    viewModel.alertItem = AlertItem(title: .init("Yue button pressed"), message: .init("Company Id: \(card.company.companyId)"))
                 } label: {
                     Image("eye_white")
                         .resizable()
@@ -65,8 +66,11 @@ struct CardView: View {
                         .frame(width: 25, height: 25)
                         .foregroundColor(Color(hex: card.mobileAppDashboard.mainColor))
                 }
+                .alert(isPresented: $showAlert) {
+                    Alert(title: Text("TEST"))
+                }
                 Button {
-                    
+                    viewModel.alertItem = AlertItem(title: .init("Trash button pressed"), message: .init("Company Id: \(card.company.companyId)"))
                 } label: {
                     Image("trash_white")
                         .resizable()
@@ -75,7 +79,7 @@ struct CardView: View {
                         .foregroundColor(Color(hex: card.mobileAppDashboard.accentColor))
                 }
                 Button {
-                    
+                    viewModel.alertItem = AlertItem(title: .init("MoreDetails button pressed"), message: .init("Company Id: \(card.company.companyId)"))
                 } label: {
                     Text("Подробнее")
                         .font(.system(size: 18))
@@ -89,10 +93,10 @@ struct CardView: View {
 
             }
             .frame(maxWidth: .infinity)
-            
-//            .alert(isPresented: $viewModel.showAlert) {
-//                viewModel.getAlert(message: card.company.companyId)
-//            }
+//            .alert(item: $viewModel.alertItem) { item in
+//                Alert(title: item.title,
+//                                  message: item.message)
+//                    }
         }
         .padding(15)
         .background {
@@ -101,6 +105,7 @@ struct CardView: View {
         }
         .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
     }
+    
 }
 
 struct CardView_Previews: PreviewProvider {

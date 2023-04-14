@@ -10,7 +10,7 @@ import Foundation
 final class GetAllCardsService {
     static let shared = GetAllCardsService()
     
-    func getAllCards(endpoint: Endpoint, completion: @escaping (Result<[CardModel], Error>) -> Void) {
+    func getAllCards(endpoint: Endpoint, completion: @escaping (Result<[CardModel], NetworkError>) -> Void) {
         let parameters = "{\n\t\"offset\": 0\n}"
         let postData = parameters.data(using: .utf8)
         
@@ -31,20 +31,23 @@ final class GetAllCardsService {
             }
             print("Status code" + " " + String(describing: httpResponse.statusCode))
             guard let data = data, error == nil else {
-                completion(.failure(error ?? ServiceError.filedToGetData))
+                completion(.failure(NetworkError.notFound))
                 return
             }
             
             guard (200...299).contains(httpResponse.statusCode) else {
                 if httpResponse.statusCode == 400 {
-                    let result = try? JSONDecoder().decode(ServerResponseMessageModel.self, from: data)
-                    completion(.failure(ResponseError.badRequest))
+                    guard let result = try? JSONDecoder().decode(ServerResponseMessageModel.self, from: data) else {
+                        completion(.failure(NetworkError.serverError(message: "Status code: \(httpResponse.statusCode)")))
+                        return
+                    }
+                    completion(.failure(NetworkError.serverError(message: result.message)))
                     print("bad Request")
                 } else if httpResponse.statusCode == 401 {
-                    completion(.failure(ResponseError.unauthorised))
+                    completion(.failure(NetworkError.serverError(message: "Ошибка авторизации")))
                     print("Ошибка авторизации")
                 } else if httpResponse.statusCode == 500 {
-                    completion(.failure(ResponseError.fatalError))
+                    completion(.failure(NetworkError.serverError(message: "Все упало")))
                     print("Все упало")
                 }
                 return
@@ -56,7 +59,7 @@ final class GetAllCardsService {
             }
             catch {
                 print(String(data: data, encoding: .utf8)!)
-                completion(.failure(error))
+                completion(.failure(NetworkError.underlyingError(error)))
                 print("Catch error: \(String(describing: error))")
             }
         }
