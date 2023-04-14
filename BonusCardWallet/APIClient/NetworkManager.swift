@@ -6,10 +6,17 @@
 //
 
 import UIKit
+import SwiftUI
 
 enum ServiceError: Error {
     case filedToCreateRequest
     case filedToGetData
+}
+
+enum ResponseError: Error {
+    case badRequest
+    case unauthorised
+    case fatalError
 }
 
 class RequestsFactory {

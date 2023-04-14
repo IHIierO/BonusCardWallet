@@ -8,42 +8,32 @@
 import SwiftUI
 
 struct Home: View {
-    @State private var cards: [CardModel] = []
-    @State private var isLoading = false
+    @StateObject private var viewModel = CardViewViewModel()
+    @State var columns = Array(repeating: GridItem(.flexible(), spacing: 15), count: 1)
     var body: some View {
-        ZStack {
-            VStack {
-                HeaderView()
-                
-                List(cards, id: \.company.companyId) {card in
-                    CardView(card: card)
-                        .listRowBackground(Color.clear)
-                        .listRowSeparator(.hidden)
-                }
-                .onAppear{
-                    isLoading = true
-                    RequestsFactory.shared.createRequest(for: .getAllCompaniesLong) { result in
-                        switch result {
-                        case .success(let cards):
-                            DispatchQueue.main.async {
-                                self.isLoading = false
-                                self.cards = cards
-                            }
-                            print("Cards: \(cards)")
-                        case .failure(let error):
-                            print("Error: \(String(describing: error))")
-                        }
+        VStack {
+            HeaderView()
+            ScrollView {
+                LazyVGrid(columns: self.columns) {
+                    ForEach(viewModel.cards, id: \.company.companyId) {card in
+                        CardView(card: card)
+                    }
+                    .padding(.horizontal, 5)
+                    .padding(10)
+                    
+                    if viewModel.isLoading {
+                        HUDProgressView(placeHolder: "Подгрузка компаний", show: $viewModel.isLoading)
+                            .padding(.top)
+                            .onAppear(perform: viewModel.fetchData)
                     }
                 }
-                .listStyle(.grouped)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .ignoresSafeArea()
             .background {
                 Color(hex: "efefef")
                     .ignoresSafeArea()
-            }
-            if isLoading { HUDProgressView(placeHolder: "Please Wait", show: $isLoading)
-                    .padding(100)
             }
         }
     }

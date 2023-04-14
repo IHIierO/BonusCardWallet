@@ -23,6 +23,7 @@
 		39D1FE0229E84D3C001825D3 /* CardLogoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FE0129E84D3C001825D3 /* CardLogoImageView.swift */; };
 		39D1FE0629E851C7001825D3 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FE0529E851C7001825D3 /* Endpoint.swift */; };
 		39D1FE0829E859A0001825D3 /* HUDProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FE0729E859A0001825D3 /* HUDProgressView.swift */; };
+		39D1FE0A29E98168001825D3 /* ServerResponseMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FE0929E98168001825D3 /* ServerResponseMessageModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		39D1FE0129E84D3C001825D3 /* CardLogoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLogoImageView.swift; sourceTree = "<group>"; };
 		39D1FE0529E851C7001825D3 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		39D1FE0729E859A0001825D3 /* HUDProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDProgressView.swift; sourceTree = "<group>"; };
+		39D1FE0929E98168001825D3 /* ServerResponseMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponseMessageModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				39D1FDF929E80F6A001825D3 /* CardModel.swift */,
+				39D1FE0929E98168001825D3 /* ServerResponseMessageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39D1FE0829E859A0001825D3 /* HUDProgressView.swift in Sources */,
+				39D1FE0A29E98168001825D3 /* ServerResponseMessageModel.swift in Sources */,
 				39D1FE0629E851C7001825D3 /* Endpoint.swift in Sources */,
 				39D1FDF029E7ED2F001825D3 /* Color+Hex.swift in Sources */,
 				39D1FDDE29E7E7B9001825D3 /* ContentView.swift in Sources */,

@@ -55,8 +55,9 @@ struct CardView: View {
             Divider()
             HStack(spacing: 50) {
                 Button {
-                    viewModel.alertType = .yey
-                    viewModel.showAlert.toggle()
+//                    viewModel.alertIdentifier = AlertIdentifier(id: .myAlerts)
+//                    viewModel.alertType = .yey
+//                    viewModel.showAlert.toggle()
                 } label: {
                     Image("eye_white")
                         .resizable()
@@ -65,8 +66,7 @@ struct CardView: View {
                         .foregroundColor(Color(hex: card.mobileAppDashboard.mainColor))
                 }
                 Button {
-                    viewModel.alertType = .trash
-                    viewModel.showAlert.toggle()
+                    
                 } label: {
                     Image("trash_white")
                         .resizable()
@@ -75,8 +75,7 @@ struct CardView: View {
                         .foregroundColor(Color(hex: card.mobileAppDashboard.accentColor))
                 }
                 Button {
-                    viewModel.alertType = .moreDetails
-                    viewModel.showAlert.toggle()
+                    
                 } label: {
                     Text("Подробнее")
                         .font(.system(size: 18))
@@ -90,9 +89,10 @@ struct CardView: View {
 
             }
             .frame(maxWidth: .infinity)
-            .alert(isPresented: $viewModel.showAlert) {
-                viewModel.getAlert()
-            }
+            
+//            .alert(isPresented: $viewModel.showAlert) {
+//                viewModel.getAlert(message: card.company.companyId)
+//            }
         }
         .padding(15)
         .background {

@@ -12,17 +12,15 @@ struct HeaderView: View {
         Text("Управление картами")
             .font(.system(size: 24))
             .foregroundColor(Color(hex: "2688eb"))
-            .frame(maxWidth: .infinity, alignment: .top)
-            .padding(15)
+            .frame(maxWidth: .infinity)
             .background {
                 Color(hex: "ffffff")
-                    .ignoresSafeArea()
             }
     }
 }
 
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderView()
+        ContentView()
     }
 }
