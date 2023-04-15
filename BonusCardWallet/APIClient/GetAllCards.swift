@@ -29,7 +29,6 @@ final class GetAllCardsService {
             guard let httpResponse = response as? HTTPURLResponse else {
                 return
             }
-            print("Status code" + " " + String(describing: httpResponse.statusCode))
             guard let data = data, error == nil else {
                 completion(.failure(NetworkError.notFound))
                 return
@@ -42,13 +41,10 @@ final class GetAllCardsService {
                         return
                     }
                     completion(.failure(NetworkError.serverError(message: result.message)))
-                    print("bad Request")
                 } else if httpResponse.statusCode == 401 {
                     completion(.failure(NetworkError.serverError(message: "Ошибка авторизации")))
-                    print("Ошибка авторизации")
                 } else if httpResponse.statusCode == 500 {
                     completion(.failure(NetworkError.serverError(message: "Все упало")))
-                    print("Все упало")
                 }
                 return
             }
@@ -58,7 +54,6 @@ final class GetAllCardsService {
                 completion(.success(result))
             }
             catch {
-                print(String(data: data, encoding: .utf8)!)
                 completion(.failure(NetworkError.underlyingError(error)))
                 print("Catch error: \(String(describing: error))")
             }

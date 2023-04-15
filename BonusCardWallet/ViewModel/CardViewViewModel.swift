@@ -13,7 +13,6 @@ final class CardViewViewModel: ObservableObject {
     @Published var isLoading = true
     
     @Published var alertItem: AlertItem?
-    @Published var showAlert: Bool = false
     
     func fetchData() {
         RequestsFactory.shared.createRequest(for: .getAllCompanies) { [weak self] result in

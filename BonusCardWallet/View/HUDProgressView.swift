@@ -14,9 +14,9 @@ struct HUDProgressView: View {
     var body: some View {
         VStack(spacing: 28) {
             Circle()
-                .trim(from: 0, to: 0.4)
-                .stroke(style: StrokeStyle(lineWidth: 12, lineCap: .round, lineJoin: .round))
-                .frame(width: 80, height: 80)
+                .trim(from: 0, to: 0.25)
+                .stroke(style: StrokeStyle(lineWidth: 6, lineCap: .butt, lineJoin: .round))
+                .frame(width: 60, height: 60)
                 .rotationEffect(.init(degrees: animate ? 360 : 0))
                 .padding()
             Text(placeHolder)

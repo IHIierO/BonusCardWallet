@@ -18,7 +18,6 @@ struct Home: View {
                 LazyVGrid(columns: self.columns) {
                     ForEach(viewModel.cards, id: \.company.companyId) {card in
                         CardView(card: card).environmentObject(viewModel)
-                           
                     }
                     .padding(.horizontal, 5)
                     .padding(10)
@@ -34,7 +33,6 @@ struct Home: View {
                                       message: item.message)
                         }
             }
-            
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .ignoresSafeArea()
             .background {
@@ -48,6 +46,6 @@ struct Home: View {
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         ContentView().previewDevice("iPhone Xs Max")
-        ContentView().previewDevice("iPhone 8")
+        ContentView().previewDevice("iPhone Xs")
     }
 }

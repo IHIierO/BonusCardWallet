@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CardView: View {
     @EnvironmentObject var viewModel: CardViewViewModel
-    @State var showAlert: Bool = false
     let card: CardModel
     
     var body: some View {
@@ -57,7 +56,6 @@ struct CardView: View {
             Divider()
             HStack(spacing: 50) {
                 Button {
-                    showAlert = true
                     viewModel.alertItem = AlertItem(title: .init("Yue button pressed"), message: .init("Company Id: \(card.company.companyId)"))
                 } label: {
                     Image("eye_white")
@@ -65,9 +63,6 @@ struct CardView: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 25, height: 25)
                         .foregroundColor(Color(hex: card.mobileAppDashboard.mainColor))
-                }
-                .alert(isPresented: $showAlert) {
-                    Alert(title: Text("TEST"))
                 }
                 Button {
                     viewModel.alertItem = AlertItem(title: .init("Trash button pressed"), message: .init("Company Id: \(card.company.companyId)"))
@@ -93,10 +88,6 @@ struct CardView: View {
 
             }
             .frame(maxWidth: .infinity)
-//            .alert(item: $viewModel.alertItem) { item in
-//                Alert(title: item.title,
-//                                  message: item.message)
-//                    }
         }
         .padding(15)
         .background {
@@ -105,7 +96,6 @@ struct CardView: View {
         }
         .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
     }
-    
 }
 
 struct CardView_Previews: PreviewProvider {
