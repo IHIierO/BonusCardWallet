@@ -25,6 +25,17 @@
 		39D1FE0829E859A0001825D3 /* HUDProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FE0729E859A0001825D3 /* HUDProgressView.swift */; };
 		39D1FE0A29E98168001825D3 /* ServerResponseMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FE0929E98168001825D3 /* ServerResponseMessageModel.swift */; };
 		39D1FE0C29E9AE06001825D3 /* AlertsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FE0B29E9AE06001825D3 /* AlertsModel.swift */; };
+		39D1FE7729F7D6CB001825D3 /* SQLiteError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FE7629F7D6CB001825D3 /* SQLiteError.swift */; };
+		39D1FE7929F7D72B001825D3 /* SQLiteDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FE7829F7D72B001825D3 /* SQLiteDatabase.swift */; };
+		39D1FE7B29F7E4CA001825D3 /* Test_DB_Contact_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FE7A29F7E4CA001825D3 /* Test_DB_Contact_Model.swift */; };
+		39D1FE7D29F7ED67001825D3 /* Test_DB_Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FE7C29F7ED67001825D3 /* Test_DB_Manager.swift */; };
+		39D1FE8029FC0435001825D3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 39D1FE7E29FC0435001825D3 /* Localizable.strings */; };
+		39D1FE8429FC0BE5001825D3 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FE8329FC0BE5001825D3 /* Language.swift */; };
+		39D1FE8629FC0C8C001825D3 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FE8529FC0C8C001825D3 /* String+Localized.swift */; };
+		39D1FE8829FC0D78001825D3 /* LocalizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FE8729FC0D78001825D3 /* LocalizationService.swift */; };
+		39D1FE8A29FC0F14001825D3 /* TEST_Language_settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FE8929FC0F14001825D3 /* TEST_Language_settings.swift */; };
+		39D1FE8C29FC19F8001825D3 /* TEST_Language_for_VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FE8B29FC19F8001825D3 /* TEST_Language_for_VM.swift */; };
+		39D1FE8E29FEB530001825D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FE8D29FEB530001825D3 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +59,18 @@
 		39D1FE0729E859A0001825D3 /* HUDProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDProgressView.swift; sourceTree = "<group>"; };
 		39D1FE0929E98168001825D3 /* ServerResponseMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponseMessageModel.swift; sourceTree = "<group>"; };
 		39D1FE0B29E9AE06001825D3 /* AlertsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsModel.swift; sourceTree = "<group>"; };
+		39D1FE7629F7D6CB001825D3 /* SQLiteError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteError.swift; sourceTree = "<group>"; };
+		39D1FE7829F7D72B001825D3 /* SQLiteDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDatabase.swift; sourceTree = "<group>"; };
+		39D1FE7A29F7E4CA001825D3 /* Test_DB_Contact_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test_DB_Contact_Model.swift; sourceTree = "<group>"; };
+		39D1FE7C29F7ED67001825D3 /* Test_DB_Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test_DB_Manager.swift; sourceTree = "<group>"; };
+		39D1FE7F29FC0435001825D3 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		39D1FE8129FC0489001825D3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		39D1FE8329FC0BE5001825D3 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		39D1FE8529FC0C8C001825D3 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
+		39D1FE8729FC0D78001825D3 /* LocalizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationService.swift; sourceTree = "<group>"; };
+		39D1FE8929FC0F14001825D3 /* TEST_Language_settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEST_Language_settings.swift; sourceTree = "<group>"; };
+		39D1FE8B29FC19F8001825D3 /* TEST_Language_for_VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEST_Language_for_VM.swift; sourceTree = "<group>"; };
+		39D1FE8D29FEB530001825D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,13 +103,16 @@
 		39D1FDDA29E7E7B9001825D3 /* BonusCardWallet */ = {
 			isa = PBXGroup;
 			children = (
+				39D1FE7429F7D688001825D3 /* Managers */,
 				39D1FE0029E823D8001825D3 /* Info.plist */,
+				39D1FE8229FC0BC1001825D3 /* Localization */,
 				39D1FDFB29E813A1001825D3 /* APIClient */,
 				39D1FDF829E80F55001825D3 /* Model */,
 				39D1FDF529E80702001825D3 /* ViewModel */,
 				39D1FDEE29E7ED1D001825D3 /* Extensions */,
 				39D1FDE929E7EB8F001825D3 /* View */,
 				39D1FDDB29E7E7B9001825D3 /* BonusCardWalletApp.swift */,
+				39D1FE8D29FEB530001825D3 /* AppDelegate.swift */,
 				39D1FDDD29E7E7B9001825D3 /* ContentView.swift */,
 				39D1FDDF29E7E7BB001825D3 /* Assets.xcassets */,
 				39D1FDE129E7E7BB001825D3 /* Preview Content */,
@@ -111,6 +137,8 @@
 				39D1FDF329E7FC92001825D3 /* RollingText.swift */,
 				39D1FE0129E84D3C001825D3 /* CardLogoImageView.swift */,
 				39D1FE0729E859A0001825D3 /* HUDProgressView.swift */,
+				39D1FE7C29F7ED67001825D3 /* Test_DB_Manager.swift */,
+				39D1FE8929FC0F14001825D3 /* TEST_Language_settings.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -119,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				39D1FDEF29E7ED2F001825D3 /* Color+Hex.swift */,
+				39D1FE8529FC0C8C001825D3 /* String+Localized.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -149,6 +178,35 @@
 				39D1FE0529E851C7001825D3 /* Endpoint.swift */,
 			);
 			path = APIClient;
+			sourceTree = "<group>";
+		};
+		39D1FE7429F7D688001825D3 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				39D1FE7529F7D68F001825D3 /* DB_SQLite_Manager */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		39D1FE7529F7D68F001825D3 /* DB_SQLite_Manager */ = {
+			isa = PBXGroup;
+			children = (
+				39D1FE7629F7D6CB001825D3 /* SQLiteError.swift */,
+				39D1FE7829F7D72B001825D3 /* SQLiteDatabase.swift */,
+				39D1FE7A29F7E4CA001825D3 /* Test_DB_Contact_Model.swift */,
+			);
+			path = DB_SQLite_Manager;
+			sourceTree = "<group>";
+		};
+		39D1FE8229FC0BC1001825D3 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				39D1FE7E29FC0435001825D3 /* Localizable.strings */,
+				39D1FE8329FC0BE5001825D3 /* Language.swift */,
+				39D1FE8729FC0D78001825D3 /* LocalizationService.swift */,
+				39D1FE8B29FC19F8001825D3 /* TEST_Language_for_VM.swift */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,11 +246,12 @@
 			};
 			buildConfigurationList = 39D1FDD329E7E7B9001825D3 /* Build configuration list for PBXProject "BonusCardWallet" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = ru;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				ru,
+				en,
 			);
 			mainGroup = 39D1FDCF29E7E7B9001825D3;
 			productRefGroup = 39D1FDD929E7E7B9001825D3 /* Products */;
@@ -210,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39D1FDE329E7E7BB001825D3 /* Preview Assets.xcassets in Resources */,
+				39D1FE8029FC0435001825D3 /* Localizable.strings in Resources */,
 				39D1FDE029E7E7BB001825D3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,30 +283,53 @@
 			files = (
 				39D1FE0829E859A0001825D3 /* HUDProgressView.swift in Sources */,
 				39D1FE0A29E98168001825D3 /* ServerResponseMessageModel.swift in Sources */,
+				39D1FE8C29FC19F8001825D3 /* TEST_Language_for_VM.swift in Sources */,
+				39D1FE8A29FC0F14001825D3 /* TEST_Language_settings.swift in Sources */,
 				39D1FE0629E851C7001825D3 /* Endpoint.swift in Sources */,
+				39D1FE8429FC0BE5001825D3 /* Language.swift in Sources */,
 				39D1FDF029E7ED2F001825D3 /* Color+Hex.swift in Sources */,
 				39D1FDDE29E7E7B9001825D3 /* ContentView.swift in Sources */,
+				39D1FE8E29FEB530001825D3 /* AppDelegate.swift in Sources */,
+				39D1FE7D29F7ED67001825D3 /* Test_DB_Manager.swift in Sources */,
 				39D1FDFD29E813CB001825D3 /* GetAllCards.swift in Sources */,
 				39D1FDEB29E7EB9D001825D3 /* Home.swift in Sources */,
 				39D1FDFF29E8165F001825D3 /* NetworkManager.swift in Sources */,
+				39D1FE8829FC0D78001825D3 /* LocalizationService.swift in Sources */,
+				39D1FE7929F7D72B001825D3 /* SQLiteDatabase.swift in Sources */,
+				39D1FE7729F7D6CB001825D3 /* SQLiteError.swift in Sources */,
 				39D1FE0C29E9AE06001825D3 /* AlertsModel.swift in Sources */,
 				39D1FDF729E80715001825D3 /* CardViewViewModel.swift in Sources */,
+				39D1FE7B29F7E4CA001825D3 /* Test_DB_Contact_Model.swift in Sources */,
 				39D1FDDC29E7E7B9001825D3 /* BonusCardWalletApp.swift in Sources */,
 				39D1FDFA29E80F6A001825D3 /* CardModel.swift in Sources */,
 				39D1FDF429E7FC92001825D3 /* RollingText.swift in Sources */,
 				39D1FDF229E7F008001825D3 /* CardView.swift in Sources */,
 				39D1FDED29E7EC46001825D3 /* HeaderView.swift in Sources */,
+				39D1FE8629FC0C8C001825D3 /* String+Localized.swift in Sources */,
 				39D1FE0229E84D3C001825D3 /* CardLogoImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		39D1FE7E29FC0435001825D3 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				39D1FE7F29FC0435001825D3 /* ru */,
+				39D1FE8129FC0489001825D3 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		39D1FDE429E7E7BB001825D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -307,6 +390,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

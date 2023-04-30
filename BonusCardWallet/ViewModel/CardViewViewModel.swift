@@ -14,6 +14,10 @@ final class CardViewViewModel: ObservableObject {
     
     @Published var alertItem: AlertItem?
     
+    @Published var db: SQLiteDatabase?
+    
+    public let part1DbPath = directoryUrl?.appendingPathComponent("db.sqlite").relativePath
+    
     func fetchData() {
         RequestsFactory.shared.createRequest(for: .getAllCompanies) { [weak self] result in
             DispatchQueue.main.async {
@@ -26,6 +30,15 @@ final class CardViewViewModel: ObservableObject {
                     print("Failure case error: \(String(describing: error))")
                 }
             }
+        }
+    }
+    
+    func openDB(with path: String) throws {
+        do {
+            db = try SQLiteDatabase.open(path: path)
+            print("Successfully opened connection to database.")
+        } catch SQLiteError.OpenDatabase(_) {
+            print("Unable to open database.")
         }
     }
 }

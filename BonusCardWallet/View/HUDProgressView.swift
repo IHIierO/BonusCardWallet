@@ -19,16 +19,13 @@ struct HUDProgressView: View {
                 .frame(width: 60, height: 60)
                 .rotationEffect(.init(degrees: animate ? 360 : 0))
                 .padding()
+                .animation(Animation.linear(duration: 1).repeatForever(autoreverses: false), value: animate)
+                .onAppear { DispatchQueue.main.async { animate.toggle() } }
             Text(placeHolder)
                 .font(.system(size: 24))
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .onAppear {
-            withAnimation(Animation.linear(duration: 1.5).repeatForever(autoreverses: false)){
-                animate.toggle()
-            }
-        }
     }
 }
 

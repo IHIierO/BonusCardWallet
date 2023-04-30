@@ -1,0 +1,8 @@
+/* No comment provided by engineer. */
+"Add User" = "Добавить пользователя";
+"Fetch User" = "Найти пользователя";
+"Update User" = "Обновить пользователя";
+"Delete User" = "Удалить пользователя";
+"Fetch all User" = "Найти всех пользователей";
+"settings_language" = "Язык";
+"settings_language_footer" = "Выберите язык интерфейса.";

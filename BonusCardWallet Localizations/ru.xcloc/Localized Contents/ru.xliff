@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="BonusCardWallet/ru.lproj/InfoPlist.strings" source-language="ru" target-language="ru" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.3" build-num="14E222b"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName" xml:space="preserve">
+        <source>BonusCardWallet</source>
+        <target>BonusCardWallet</target>
+        <note>Bundle name</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="BonusCardWallet/ru.lproj/Localizable.strings" source-language="ru" target-language="ru" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.3" build-num="14E222b"/>
+    </header>
+    <body>
+      <trans-unit id="%" xml:space="preserve">
+        <source>%</source>
+        <target>%</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%lld" xml:space="preserve">
+        <source>%lld</source>
+        <target>%lld</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="8" xml:space="preserve">
+        <source>8</source>
+        <target>8</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Add User" xml:space="preserve">
+        <source>Add User</source>
+        <target>Add User</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Company Id: %@" xml:space="preserve">
+        <source>Company Id: %@</source>
+        <target>Company Id: %@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Create table" xml:space="preserve">
+        <source>Create table</source>
+        <target>Create table</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Delete User" xml:space="preserve">
+        <source>Delete User</source>
+        <target>Удалить пользователя</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Destroy database" xml:space="preserve">
+        <source>Destroy database</source>
+        <target>Destroy database</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Enter id" xml:space="preserve">
+        <source>Enter id</source>
+        <target>Enter id</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Enter name" xml:space="preserve">
+        <source>Enter name</source>
+        <target>Enter name</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Error" xml:space="preserve">
+        <source>Error</source>
+        <target>Error</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Fetch User" xml:space="preserve">
+        <source>Fetch User</source>
+        <target>Fetch User</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Fetch all User" xml:space="preserve">
+        <source>Fetch all User</source>
+        <target>Fetch all User</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="MoreDetails button pressed" xml:space="preserve">
+        <source>MoreDetails button pressed</source>
+        <target>MoreDetails button pressed</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Open database" xml:space="preserve">
+        <source>Open database</source>
+        <target>Open database</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="SQLiteDB" xml:space="preserve">
+        <source>SQLiteDB</source>
+        <target>SQLiteDB</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Trash button pressed" xml:space="preserve">
+        <source>Trash button pressed</source>
+        <target>Trash button pressed</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Update User" xml:space="preserve">
+        <source>Update User</source>
+        <target>Update User</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Yue button pressed" xml:space="preserve">
+        <source>Yue button pressed</source>
+        <target>Yue button pressed</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Кешбек" xml:space="preserve">
+        <source>Кешбек</source>
+        <target>Кешбек</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Подробнее" xml:space="preserve">
+        <source>Подробнее</source>
+        <target>Подробнее</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Управление картами" xml:space="preserve">
+        <source>Управление картами</source>
+        <target>Управление картами</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Уровень" xml:space="preserve">
+        <source>Уровень</source>
+        <target>Уровень</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="баллов" xml:space="preserve">
+        <source>баллов</source>
+        <target>баллов</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
