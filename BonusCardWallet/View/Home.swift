@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct Home: View {
+    @Environment(\.presentationMode) var presentationMode
     @StateObject private var viewModel = CardViewViewModel()
     @State var columns = Array(repeating: GridItem(.flexible(), spacing: 15), count: 1)
     
     @State var isPresenting = false
+    @State private var offset: Int = 0
     
     var body: some View {
         NavigationView {
@@ -33,9 +35,13 @@ struct Home: View {
                             if viewModel.isLoading {
                                 HUDProgressView(placeHolder: "Подгрузка компаний", show: $viewModel.isLoading)
                                     .padding(.top)
-                                    .onAppear(perform:
-                                                viewModel.fetchData
-                                    )
+                                    .onAppear{
+                                        viewModel.fetchData(offset: offset)
+                                        offset += 5
+                                        print("Offset: \(GetAllCardsService.shared.offsetX)")
+                                        print("---------------")
+                                        print("Limit: \(GetAllCardsService.shared.limitX)")
+                                    }
                            }
 
                         })
@@ -57,6 +63,13 @@ struct Home: View {
             }
             .navigationBarTitle("Управление картами")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Выйти") {
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                }
+            }
         }
         .navigationViewStyle(.stack)
     }

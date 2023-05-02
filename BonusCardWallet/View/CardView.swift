@@ -18,10 +18,15 @@ struct CardView: View {
                     .font(.system(size: 24))
                     .foregroundColor(Color(hex: card.mobileAppDashboard.highlightTextColor))
                 Spacer()
-                CardLogoImage(urlString: card.mobileAppDashboard.logo)
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 40, height: 40)
-                                .cornerRadius(20)
+                //CardLogoImage(urlString: card.mobileAppDashboard.logo)
+                AsyncImage(url: URL(string: card.mobileAppDashboard.logo), content: { image in
+                    image.resizable()
+                }, placeholder: {
+                    ProgressView()
+                })
+                    .frame(width: 40, height: 40)
+//                    .aspectRatio(contentMode: .fit)
+                    .cornerRadius(20)
             }
             Divider()
             HStack(alignment: .bottom, spacing: 4) {

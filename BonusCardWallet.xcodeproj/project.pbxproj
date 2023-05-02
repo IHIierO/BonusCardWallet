@@ -36,6 +36,8 @@
 		39D1FE8A29FC0F14001825D3 /* TEST_Language_settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FE8929FC0F14001825D3 /* TEST_Language_settings.swift */; };
 		39D1FE8C29FC19F8001825D3 /* TEST_Language_for_VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FE8B29FC19F8001825D3 /* TEST_Language_for_VM.swift */; };
 		39D1FE8E29FEB530001825D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FE8D29FEB530001825D3 /* AppDelegate.swift */; };
+		39D1FE9029FEE613001825D3 /* HTTPResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FE8F29FEE612001825D3 /* HTTPResponseHandler.swift */; };
+		39D1FE942A011F05001825D3 /* TEST_loginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FE932A011F05001825D3 /* TEST_loginPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +73,8 @@
 		39D1FE8929FC0F14001825D3 /* TEST_Language_settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEST_Language_settings.swift; sourceTree = "<group>"; };
 		39D1FE8B29FC19F8001825D3 /* TEST_Language_for_VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEST_Language_for_VM.swift; sourceTree = "<group>"; };
 		39D1FE8D29FEB530001825D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		39D1FE8F29FEE612001825D3 /* HTTPResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPResponseHandler.swift; sourceTree = "<group>"; };
+		39D1FE932A011F05001825D3 /* TEST_loginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEST_loginPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				39D1FE7429F7D688001825D3 /* Managers */,
-				39D1FE0029E823D8001825D3 /* Info.plist */,
 				39D1FE8229FC0BC1001825D3 /* Localization */,
 				39D1FDFB29E813A1001825D3 /* APIClient */,
 				39D1FDF829E80F55001825D3 /* Model */,
@@ -114,6 +117,7 @@
 				39D1FDDB29E7E7B9001825D3 /* BonusCardWalletApp.swift */,
 				39D1FE8D29FEB530001825D3 /* AppDelegate.swift */,
 				39D1FDDD29E7E7B9001825D3 /* ContentView.swift */,
+				39D1FE0029E823D8001825D3 /* Info.plist */,
 				39D1FDDF29E7E7BB001825D3 /* Assets.xcassets */,
 				39D1FDE129E7E7BB001825D3 /* Preview Content */,
 			);
@@ -139,6 +143,7 @@
 				39D1FE0729E859A0001825D3 /* HUDProgressView.swift */,
 				39D1FE7C29F7ED67001825D3 /* Test_DB_Manager.swift */,
 				39D1FE8929FC0F14001825D3 /* TEST_Language_settings.swift */,
+				39D1FE932A011F05001825D3 /* TEST_loginPage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -176,6 +181,7 @@
 				39D1FDFC29E813CB001825D3 /* GetAllCards.swift */,
 				39D1FDFE29E8165F001825D3 /* NetworkManager.swift */,
 				39D1FE0529E851C7001825D3 /* Endpoint.swift */,
+				39D1FE8F29FEE612001825D3 /* HTTPResponseHandler.swift */,
 			);
 			path = APIClient;
 			sourceTree = "<group>";
@@ -297,6 +303,8 @@
 				39D1FE8829FC0D78001825D3 /* LocalizationService.swift in Sources */,
 				39D1FE7929F7D72B001825D3 /* SQLiteDatabase.swift in Sources */,
 				39D1FE7729F7D6CB001825D3 /* SQLiteError.swift in Sources */,
+				39D1FE942A011F05001825D3 /* TEST_loginPage.swift in Sources */,
+				39D1FE9029FEE613001825D3 /* HTTPResponseHandler.swift in Sources */,
 				39D1FE0C29E9AE06001825D3 /* AlertsModel.swift in Sources */,
 				39D1FDF729E80715001825D3 /* CardViewViewModel.swift in Sources */,
 				39D1FE7B29F7E4CA001825D3 /* Test_DB_Contact_Model.swift in Sources */,
