@@ -32,7 +32,7 @@ struct HelloView: View {
                         .frame(width: 260, height: 70)
                         .cornerRadius(Constants.logo_size)
                         .padding(.top, Constants.large_margin)
-                        //.environmentObject(globalVariables)
+                        .environmentObject(globalVariables)
                             
                         Spacer()
                         
@@ -89,13 +89,14 @@ struct HelloView: View {
                             LocalizationMenu {
                                 chooseLanguage = false
                             }
+                            .environmentObject(globalVariables)
                         } closeAction: {
                             chooseLanguage = false
                         }
 
                     }
                     
-                    NavigationLink(destination: PhoneNumberPage(), isActive: $goToPhoneNumberPage) {
+                    NavigationLink(destination: PhoneNumberPage().environmentObject(globalVariables), isActive: $goToPhoneNumberPage) {
                         EmptyView()
                     }
                 }

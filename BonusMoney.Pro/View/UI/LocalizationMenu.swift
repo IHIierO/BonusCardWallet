@@ -23,8 +23,9 @@ struct LocalizationMenu: View {
                 ForEach(language, id: \.self) { language in
                     
                     Button {
-                        print("Tapped")
+                        
                         globalVariables.globalLanguage = language
+                        print("Global language: \(globalVariables.globalLanguage)")
                         action()
                     } label: {
                         HStack(spacing: 10){
@@ -56,8 +57,6 @@ struct LocalizationMenu: View {
         .frame(minWidth: .ulpOfOne, idealWidth: 300, maxHeight: CGFloat(language.count) * 84, alignment: .center)
         .cornerRadius(Constants.btn_radius)
         
-        
-        //.padding(.horizontal, Constants.large_margin)
     }
 }
 

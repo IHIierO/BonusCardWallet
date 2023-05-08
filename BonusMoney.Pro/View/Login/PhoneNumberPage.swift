@@ -65,6 +65,7 @@ struct PhoneNumberPage: View {
                 .frame(width: 260, height: 70)
                 .cornerRadius(Constants.logo_size)
                 .padding(.top, Constants.large_margin)
+                .environmentObject(globalVariables)
                 
                 Spacer()
                 
@@ -93,11 +94,13 @@ struct PhoneNumberPage: View {
                 }
             }
             
+            
             if chooseLanguage {
                 CustomAlert {
                     LocalizationMenu {
                         chooseLanguage = false
                     }
+                    .environmentObject(globalVariables)
                 } closeAction: {
                     chooseLanguage = false
                 }
