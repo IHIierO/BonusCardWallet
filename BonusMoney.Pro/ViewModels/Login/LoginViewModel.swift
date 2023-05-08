@@ -15,7 +15,31 @@ final class LoginViewModel: ObservableObject {
     @Published var verifyUser: VerifyModel?
     @Published var showAlert = false
     
-    func callNumber() {
+    
+    func checkAvailableTypes() {
+        guard let currentModel = phoneVerificationModel else {return}
+        let availableTypes = currentModel.availableTypes
+        if availableTypes.count == 0 {
+            GlobalVariables.shared.requestVerificationType = .null
+        }else if availableTypes.count == 1 {
+            if availableTypes[0].type == "CALL_PASS" {
+                GlobalVariables.shared.requestVerificationType = .callPass
+            } else if availableTypes[0].type == "SMS" {
+                GlobalVariables.shared.requestVerificationType = .sms
+            }
+        } else if availableTypes.count == 2 {
+            let firstType = availableTypes[0].type
+            let secondType = availableTypes[1].type
+            if firstType == "CALL_PASS" && secondType == "SMS" {
+                GlobalVariables.shared.requestVerificationType = .all
+            } else if firstType == "SMS" && secondType == "CALL_PASS" {
+                GlobalVariables.shared.requestVerificationType = .all
+            }
+        }
+        print("Type in VM: \(GlobalVariables.shared.requestVerificationType)")
+    }
+    
+    func verifyCallToNumber() {
         guard let currentModel = phoneVerificationModel else {return}
         
         let currentSendType = currentModel.currentSendType

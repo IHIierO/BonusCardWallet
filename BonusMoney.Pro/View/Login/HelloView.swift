@@ -62,7 +62,7 @@ struct HelloView: View {
                             
                             FilledButton(title: "Нет", action: {
                                 print("No button tap")
-                                globalVariables.testShowAlert .toggle()
+                                isLoggedIn.toggle()
                             }, color: .secondText, radius: Constants.btn_radius)
                             
                             
@@ -71,16 +71,16 @@ struct HelloView: View {
                     }
                    
                     
-                    if globalVariables.testShowAlert  {
+                    if isLoggedIn  {
                         CustomAlert {
                             AlertWithTwoButtons(yesAction: {
-                                globalVariables.testShowAlert  = false
+                                isLoggedIn  = false
                                 goToPhoneNumberPage = true
                             }, noAction: {
-                                globalVariables.testShowAlert  = false
-                            }, alertTitle: "К сожалению, приложение Bonus Mone не показывает список всех компаний, где можно воспользоваться бонусами, скидками от Bonus Money. Скорее всего, оно будет бесполезное для Bac.", alertSubTitle: "Продолжить регистрацию?")
+                                isLoggedIn  = false
+                            }, alertTitle: "К сожалению, приложение Bonus Money не показывает список всех компаний, где можно воспользоваться бонусами, скидками от Bonus Money. Скорее всего, оно будет бесполезное для Bac.", alertSubTitle: "Продолжить регистрацию?")
                         } closeAction: {
-                            globalVariables.testShowAlert  = false
+                            isLoggedIn  = false
                         }
                     }
                     

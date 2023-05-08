@@ -71,6 +71,7 @@ struct PhoneNumberPage: View {
                 
                 Button {
                     print("Button pressed")
+                    viewModel.requestPhoneVerification()
                     wantContinue.toggle()
                 } label: {
                     Text("Продолжить")
@@ -106,7 +107,10 @@ struct PhoneNumberPage: View {
                 }
             }
             
-            NavigationLink(destination: ValidatePhoneNumber().environmentObject(viewModel), isActive: $goToPhoneNumberPage) {
+            NavigationLink(destination: VerifyPage()
+                .environmentObject(viewModel)
+                .environmentObject(globalVariables)
+                , isActive: $goToPhoneNumberPage) {
                 EmptyView()
             }
         }

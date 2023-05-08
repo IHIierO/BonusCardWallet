@@ -5,14 +5,14 @@
 //  Created by Artem Vorobev on 04.05.2023.
 //
 
-import Foundation
+import SwiftUI
 
 final class RequestManager {
     
     static let shared = RequestManager()
     
-    func requestPhoneVerification(for phoneNumber: String, completion: @escaping (Result<PhoneVerificationModel, NetworkError>) -> Void) {
-        let parameters = "{\r\n    \"countryCode\": \"RU\",\r\n    \"phone\": \"\(phoneNumber)\",\r\n    \"type\": null\r\n}"
+    func requestPhoneVerification(for phoneNumber: String, verificationType: GlobalVariables.RequestVerificationType = .null, completion: @escaping (Result<PhoneVerificationModel, NetworkError>) -> Void) {
+        let parameters = "{\r\n    \"countryCode\": \"RU\",\r\n    \"phone\": \"\(phoneNumber)\",\r\n    \"type\": \(verificationType.rawValue)\r\n}"
         let postData = parameters.data(using: .utf8)
 
         var request = URLRequest(url: URL(string: "https://bm-app.com/mobileapp/register/sendPhoneVerification")!,timeoutInterval: Double.infinity)
@@ -28,6 +28,7 @@ final class RequestManager {
             return
           }
             do {
+                print(String(data: data, encoding: .utf8)!)
                 let result = try JSONDecoder().decode(PhoneVerificationModel.self, from: data)
                 completion(.success(result))
             } catch {

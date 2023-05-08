@@ -9,7 +9,18 @@ import SwiftUI
 
 
 final class GlobalVariables: ObservableObject {
+    
+    static let shared = GlobalVariables()
+ 
    @Published var globalLanguage = LocalizationService.shared.language
-   @Published var testShowAlert: Bool = false
+    
+    enum RequestVerificationType: String {
+        case callPass = "CALL_PASS"
+        case sms = "SMS"
+        case all
+        case null = "null"
+    }
+    
+    @Published var requestVerificationType: RequestVerificationType = .null
 }
 

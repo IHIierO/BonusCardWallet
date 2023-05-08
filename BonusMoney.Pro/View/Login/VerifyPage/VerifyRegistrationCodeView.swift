@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ConfirmSMS: View {
+struct VerifyRegistrationCodeView: View {
     @State private var smsCode: [String] = ["","","",""]
     
     var body: some View {
@@ -70,8 +70,8 @@ struct ConfirmSMS: View {
     }
 }
 
-struct ConfirmSMS_Previews: PreviewProvider {
+struct VerifyRegistrationCodeView_Previews: PreviewProvider {
     static var previews: some View {
-        ConfirmSMS()
+        VerifyRegistrationCodeView()
     }
 }

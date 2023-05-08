@@ -13,6 +13,7 @@
 		394ED9F12A04F3E6000A3D3F /* LocalizationMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394ED9F02A04F3E6000A3D3F /* LocalizationMenu.swift */; };
 		394ED9F32A050540000A3D3F /* TestProfileTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394ED9F22A050540000A3D3F /* TestProfileTextView.swift */; };
 		394ED9F62A053644000A3D3F /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394ED9F52A053644000A3D3F /* Config.swift */; };
+		394EDA132A09125B000A3D3F /* VerifyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394EDA122A09125B000A3D3F /* VerifyPage.swift */; };
 		39D1FEA22A0251B8001825D3 /* BonusMoney_ProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FEA12A0251B8001825D3 /* BonusMoney_ProApp.swift */; };
 		39D1FEA42A0251B8001825D3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FEA32A0251B8001825D3 /* ContentView.swift */; };
 		39D1FEA62A0251BA001825D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39D1FEA52A0251BA001825D3 /* Assets.xcassets */; };
@@ -25,8 +26,8 @@
 		39D1FEBF2A026145001825D3 /* AlertWithOneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FEBE2A026145001825D3 /* AlertWithOneButton.swift */; };
 		39D1FEC22A0266D7001825D3 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FEC12A0266D7001825D3 /* Colors.swift */; };
 		39D1FEC42A026C38001825D3 /* PhoneNumberPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FEC32A026C38001825D3 /* PhoneNumberPage.swift */; };
-		39D1FEC62A0275B9001825D3 /* ValidatePhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FEC52A0275B9001825D3 /* ValidatePhoneNumber.swift */; };
-		39D1FEC82A0283F5001825D3 /* ConfirmSMS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FEC72A0283F5001825D3 /* ConfirmSMS.swift */; };
+		39D1FEC62A0275B9001825D3 /* VerifyCallToPhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FEC52A0275B9001825D3 /* VerifyCallToPhoneView.swift */; };
+		39D1FEC82A0283F5001825D3 /* VerifyRegistrationCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FEC72A0283F5001825D3 /* VerifyRegistrationCodeView.swift */; };
 		39D1FECA2A0288D9001825D3 /* Color+MainColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FEC92A0288D9001825D3 /* Color+MainColor.swift */; };
 		39D1FECC2A028BA5001825D3 /* AlertWithTwoButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FECB2A028BA5001825D3 /* AlertWithTwoButtons.swift */; };
 		39D1FECE2A028D72001825D3 /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FECD2A028D72001825D3 /* ProfilePage.swift */; };
@@ -53,6 +54,7 @@
 		394ED9F02A04F3E6000A3D3F /* LocalizationMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationMenu.swift; sourceTree = "<group>"; };
 		394ED9F22A050540000A3D3F /* TestProfileTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProfileTextView.swift; sourceTree = "<group>"; };
 		394ED9F52A053644000A3D3F /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		394EDA122A09125B000A3D3F /* VerifyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPage.swift; sourceTree = "<group>"; };
 		39D1FE9E2A0251B8001825D3 /* BonusMoney.Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BonusMoney.Pro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39D1FEA12A0251B8001825D3 /* BonusMoney_ProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusMoney_ProApp.swift; sourceTree = "<group>"; };
 		39D1FEA32A0251B8001825D3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,8 +68,8 @@
 		39D1FEBE2A026145001825D3 /* AlertWithOneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWithOneButton.swift; sourceTree = "<group>"; };
 		39D1FEC12A0266D7001825D3 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		39D1FEC32A026C38001825D3 /* PhoneNumberPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberPage.swift; sourceTree = "<group>"; };
-		39D1FEC52A0275B9001825D3 /* ValidatePhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatePhoneNumber.swift; sourceTree = "<group>"; };
-		39D1FEC72A0283F5001825D3 /* ConfirmSMS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmSMS.swift; sourceTree = "<group>"; };
+		39D1FEC52A0275B9001825D3 /* VerifyCallToPhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCallToPhoneView.swift; sourceTree = "<group>"; };
+		39D1FEC72A0283F5001825D3 /* VerifyRegistrationCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyRegistrationCodeView.swift; sourceTree = "<group>"; };
 		39D1FEC92A0288D9001825D3 /* Color+MainColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+MainColor.swift"; sourceTree = "<group>"; };
 		39D1FECB2A028BA5001825D3 /* AlertWithTwoButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWithTwoButtons.swift; sourceTree = "<group>"; };
 		39D1FECD2A028D72001825D3 /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
@@ -117,6 +119,16 @@
 				394ED9F52A053644000A3D3F /* Config.swift */,
 			);
 			path = Cofig;
+			sourceTree = "<group>";
+		};
+		394EDA112A091191000A3D3F /* VerifyPage */ = {
+			isa = PBXGroup;
+			children = (
+				39D1FEC52A0275B9001825D3 /* VerifyCallToPhoneView.swift */,
+				39D1FEC72A0283F5001825D3 /* VerifyRegistrationCodeView.swift */,
+				394EDA122A09125B000A3D3F /* VerifyPage.swift */,
+			);
+			path = VerifyPage;
 			sourceTree = "<group>";
 		};
 		39D1FE952A0251B8001825D3 = {
@@ -176,8 +188,7 @@
 			children = (
 				39D1FEB12A025426001825D3 /* HelloView.swift */,
 				39D1FEC32A026C38001825D3 /* PhoneNumberPage.swift */,
-				39D1FEC52A0275B9001825D3 /* ValidatePhoneNumber.swift */,
-				39D1FEC72A0283F5001825D3 /* ConfirmSMS.swift */,
+				394EDA112A091191000A3D3F /* VerifyPage */,
 				39D1FECD2A028D72001825D3 /* ProfilePage.swift */,
 			);
 			path = Login;
@@ -365,6 +376,7 @@
 				39D1FEDE2A03AFD0001825D3 /* LoginViewModel.swift in Sources */,
 				39D1FEF22A0434B5001825D3 /* PhoneNumberTextField.swift in Sources */,
 				39D1FEE22A03B8A9001825D3 /* NetworkError.swift in Sources */,
+				394EDA132A09125B000A3D3F /* VerifyPage.swift in Sources */,
 				394ED9F62A053644000A3D3F /* Config.swift in Sources */,
 				39D1FEDC2A03AE30001825D3 /* RequestManager.swift in Sources */,
 				39D1FEE52A03CEA8001825D3 /* VerifyModel.swift in Sources */,
@@ -375,10 +387,10 @@
 				39D1FECA2A0288D9001825D3 /* Color+MainColor.swift in Sources */,
 				39D1FEBF2A026145001825D3 /* AlertWithOneButton.swift in Sources */,
 				39D1FEE72A03CF93001825D3 /* HTTPResponseHandler.swift in Sources */,
-				39D1FEC82A0283F5001825D3 /* ConfirmSMS.swift in Sources */,
+				39D1FEC82A0283F5001825D3 /* VerifyRegistrationCodeView.swift in Sources */,
 				39D1FEA22A0251B8001825D3 /* BonusMoney_ProApp.swift in Sources */,
 				39D1FECE2A028D72001825D3 /* ProfilePage.swift in Sources */,
-				39D1FEC62A0275B9001825D3 /* ValidatePhoneNumber.swift in Sources */,
+				39D1FEC62A0275B9001825D3 /* VerifyCallToPhoneView.swift in Sources */,
 				39D1FEB72A0255A9001825D3 /* String+Localized.swift in Sources */,
 				394ED9EB2A04E56A000A3D3F /* Notification.Name.swift in Sources */,
 				39D1FED02A028E40001825D3 /* ProfileModel.swift in Sources */,

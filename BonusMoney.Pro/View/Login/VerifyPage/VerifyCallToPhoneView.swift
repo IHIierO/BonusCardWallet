@@ -1,5 +1,5 @@
 //
-//  ValidatePhoneNumber.swift
+//  VerifyCallToPhoneView.swift
 //  BonusMoney.Pro
 //
 //  Created by Artem Vorobev on 03.05.2023.
@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct ValidatePhoneNumber: View {
+struct VerifyCallToPhoneView: View {
     
     @EnvironmentObject var viewModel: LoginViewModel
+    @EnvironmentObject var globalVariables: GlobalVariables
     
     @State private var wantContinue = false
     @State private var confirm = false
@@ -40,7 +41,7 @@ struct ValidatePhoneNumber: View {
                 Button {
                     print("Button pressed")
 //                    confirm.toggle()
-                    viewModel.callNumber()
+                    viewModel.verifyCallToNumber()
                 } label: {
                     Text("Позвонить")
                         .foregroundColor(.white)
@@ -56,17 +57,24 @@ struct ValidatePhoneNumber: View {
                 .padding()
                 .padding(.top, 40)
                 
-                NavigationLink(destination: ConfirmSMS(), isActive: $goToSMSConfirm) {
-                    Text("Запросить SMS")
-                        .foregroundColor(.blue)
+                if globalVariables.requestVerificationType == .all {
+                    
+                    NavigationLink(destination: VerifyRegistrationCodeView(), isActive: $goToSMSConfirm) {
+                        Text("Запросить SMS")
+                            .foregroundColor(.blue)
+                    }
+                    .padding()
                 }
-                .padding()
                 
-                NavigationLink(destination: Text("Second view"), isActive: $getPhoneNumberConfirm) {
+                Button {
+                    viewModel.requestPhoneVerification()
+                    print("Новый номер запрошен")
+                } label: {
                     Text("Запросить номер для звонка")
                         .foregroundColor(.blue)
                 }
-                
+                .padding()
+
                 Spacer()
                 
                 Button {
@@ -83,7 +91,7 @@ struct ValidatePhoneNumber: View {
                 }
             }
             .onAppear{
-                viewModel.requestPhoneVerification()
+                //viewModel.requestPhoneVerification()
             }
             
             if viewModel.showAlert {
@@ -117,10 +125,13 @@ struct ValidatePhoneNumber: View {
     }
 }
 
-struct ValidatePhoneNumber_Previews: PreviewProvider {
+struct VerifyCallToPhoneView_Previews: PreviewProvider {
     static var previews: some View {
-        @StateObject var viewModel = LoginViewModel()
-        ValidatePhoneNumber().environmentObject(viewModel)
+        @ObservedObject var globalVariables = GlobalVariables()
+        @ObservedObject var viewModel = LoginViewModel()
+        VerifyCallToPhoneView()
+            .environmentObject(viewModel)
+            .environmentObject(globalVariables)
     }
 }
 
