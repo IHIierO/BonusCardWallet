@@ -33,9 +33,10 @@ struct PhoneNumberPage: View {
                             .foregroundColor(Color(hex: Colors.secondText.rawValue))
                             .padding(.leading)
                     }
-                    TextField(text: $viewModel.phoneNumber) {
-                        Text("+7").foregroundColor(.mainText)
-                    }
+                    TextField("Phone Number", text: Binding(
+                        get: { (viewModel.phoneNumber) },
+                        set: { viewModel.phoneNumber = $0.applyingMask(globalVariables.globalLanguage.phoneNumberMask, replacementCharacter: LocalizationService.shared.replacementChar) }
+                    ))
                         .padding(.horizontal)
                         .padding(.top)
                         .foregroundColor(Color(hex: Colors.mainText.rawValue))
@@ -45,16 +46,17 @@ struct PhoneNumberPage: View {
                         .keyboardType(.phonePad)
                         .textContentType(.telephoneNumber)
                         .focused($focusItem)
-                        .onChange(of: viewModel.phoneNumber) { _ in
-                            viewModel.phoneNumber = viewModel.phoneNumber.formatPhoneNumber()
+                        .onChange(of: viewModel.phoneNumber) { newValue in
+                            if newValue.count > 17 {
+                                viewModel.phoneNumber = String(newValue.prefix(18))
+                                focusItem = false
+                                print("Phone Number: \(viewModel.phoneNumber)")
+                            }
                         }
                         
                     Divider()
                         .overlay(Color(hex: Colors.mainText.rawValue))
                         .padding(.horizontal)
-                    
-                    //PhoneNumberField(phoneNumber: $viewModel.phoneNumber)
-                    
                 }
                 
                 /// Country menu

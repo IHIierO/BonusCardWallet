@@ -27,4 +27,6 @@ class LocalizationService {
             }
         }
     }
+    
+    let replacementChar: Character = "X"
 }
