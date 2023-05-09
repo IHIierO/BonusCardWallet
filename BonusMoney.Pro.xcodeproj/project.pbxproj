@@ -14,6 +14,8 @@
 		394ED9F32A050540000A3D3F /* TestProfileTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394ED9F22A050540000A3D3F /* TestProfileTextView.swift */; };
 		394ED9F62A053644000A3D3F /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394ED9F52A053644000A3D3F /* Config.swift */; };
 		394EDA132A09125B000A3D3F /* VerifyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394EDA122A09125B000A3D3F /* VerifyPage.swift */; };
+		394EDA172A0A85AA000A3D3F /* OTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394EDA162A0A85AA000A3D3F /* OTPTextField.swift */; };
+		394EDA192A0A867C000A3D3F /* OTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394EDA182A0A867C000A3D3F /* OTPViewModel.swift */; };
 		39D1FEA22A0251B8001825D3 /* BonusMoney_ProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FEA12A0251B8001825D3 /* BonusMoney_ProApp.swift */; };
 		39D1FEA42A0251B8001825D3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FEA32A0251B8001825D3 /* ContentView.swift */; };
 		39D1FEA62A0251BA001825D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39D1FEA52A0251BA001825D3 /* Assets.xcassets */; };
@@ -55,6 +57,8 @@
 		394ED9F22A050540000A3D3F /* TestProfileTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProfileTextView.swift; sourceTree = "<group>"; };
 		394ED9F52A053644000A3D3F /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		394EDA122A09125B000A3D3F /* VerifyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPage.swift; sourceTree = "<group>"; };
+		394EDA162A0A85AA000A3D3F /* OTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
+		394EDA182A0A867C000A3D3F /* OTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModel.swift; sourceTree = "<group>"; };
 		39D1FE9E2A0251B8001825D3 /* BonusMoney.Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BonusMoney.Pro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39D1FEA12A0251B8001825D3 /* BonusMoney_ProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusMoney_ProApp.swift; sourceTree = "<group>"; };
 		39D1FEA32A0251B8001825D3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 				39D1FEBE2A026145001825D3 /* AlertWithOneButton.swift */,
 				39D1FECB2A028BA5001825D3 /* AlertWithTwoButtons.swift */,
 				394ED9F22A050540000A3D3F /* TestProfileTextView.swift */,
+				394EDA162A0A85AA000A3D3F /* OTPTextField.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				39D1FEDD2A03AFCF001825D3 /* LoginViewModel.swift */,
+				394EDA182A0A867C000A3D3F /* OTPViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -385,9 +391,11 @@
 				39D1FEBA2A02560B001825D3 /* Language.swift in Sources */,
 				39D1FEC42A026C38001825D3 /* PhoneNumberPage.swift in Sources */,
 				39D1FECA2A0288D9001825D3 /* Color+MainColor.swift in Sources */,
+				394EDA172A0A85AA000A3D3F /* OTPTextField.swift in Sources */,
 				39D1FEBF2A026145001825D3 /* AlertWithOneButton.swift in Sources */,
 				39D1FEE72A03CF93001825D3 /* HTTPResponseHandler.swift in Sources */,
 				39D1FEC82A0283F5001825D3 /* VerifyRegistrationCodeView.swift in Sources */,
+				394EDA192A0A867C000A3D3F /* OTPViewModel.swift in Sources */,
 				39D1FEA22A0251B8001825D3 /* BonusMoney_ProApp.swift in Sources */,
 				39D1FECE2A028D72001825D3 /* ProfilePage.swift in Sources */,
 				39D1FEC62A0275B9001825D3 /* VerifyCallToPhoneView.swift in Sources */,

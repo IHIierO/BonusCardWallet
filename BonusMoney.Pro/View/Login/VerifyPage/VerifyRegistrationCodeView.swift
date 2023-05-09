@@ -9,6 +9,7 @@ import SwiftUI
 
 struct VerifyRegistrationCodeView: View {
     @State private var smsCode: [String] = ["","","",""]
+    @StateObject var otpViewModel: OTPViewModel = .init()
     
     var body: some View {
         ZStack {
@@ -29,24 +30,27 @@ struct VerifyRegistrationCodeView: View {
                 }
                 .padding()
                 
-              
+              OTPTextField()
+                    .environmentObject(otpViewModel)
                 
-                HStack {
-                    Spacer(minLength: 40)
-                    ForEach((0..<smsCode.count), id: \.self) { field in
-                        VStack{
-                            TextField("", text: $smsCode[field])
-                            Divider()
-                                .overlay {
-                                    Color(hex: Colors.mainText.rawValue)
-                                        .frame(height: 2)
-                                }
-                        }
-                        .padding()
-                    }
-
-                    Spacer(minLength: 40)
-                }
+//                HStack {
+//                    Spacer(minLength: 40)
+//                    ForEach((0..<smsCode.count), id: \.self) { field in
+//                        VStack{
+//                            TextField("", text: $smsCode[field])
+//                            Divider()
+//                                .overlay {
+//                                    Color(hex: Colors.mainText.rawValue)
+//                                        .frame(height: 2)
+//                                }
+//                        }
+//                        .padding()
+//                    }
+//
+//                    Spacer(minLength: 40)
+//                }
+                
+                
                 CountdownTimerView(seconds: 37, text: "Запросить SMS")
                     .foregroundColor(.secondText)
                     .padding(.vertical)
@@ -60,11 +64,15 @@ struct VerifyRegistrationCodeView: View {
                     Text("Продолжить")
                         .foregroundColor(.white)
                         .background {
-                            RoundedRectangle(cornerRadius: 10)
+                            RoundedRectangle(cornerRadius: Constants.btn_radius, style: .continuous)
+                                .fill(Color.activeElement)
                                 .frame(width: 200, height: 40, alignment: .center)
                         }
-                        .frame(width: 200, height: 40)
+                        .padding()
+                        //.frame(width: 200, height: 40)
                 }
+                .disabled(otpViewModel.checkStates())
+                .opacity(otpViewModel.checkStates() ? 0.4 : 1)
             }
         }
     }

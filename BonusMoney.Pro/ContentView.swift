@@ -12,7 +12,9 @@ struct ContentView: View {
     @EnvironmentObject var globalVariables: GlobalVariables
     
     var body: some View {
-        HelloView().environmentObject(globalVariables)
+        NavigationView {
+            HelloView().environmentObject(globalVariables)
+        }
     }
 }
 

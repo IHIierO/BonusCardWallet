@@ -9,9 +9,6 @@ import SwiftUI
 
 struct HelloView: View {
     
-    //@AppStorage("language")
-   // private var language = BonusMoney_ProApp.config// LocalizationService.shared.language
-    
     @EnvironmentObject var globalVariables: GlobalVariables
     
     @State private var isLoggedIn = false
@@ -19,7 +16,6 @@ struct HelloView: View {
     @State private var chooseLanguage = false
     
     var body: some View {
-            NavigationView {
                 ZStack {
                     Color.mainBackground
                         .ignoresSafeArea()
@@ -100,16 +96,6 @@ struct HelloView: View {
                         EmptyView()
                     }
                 }
-            }
-    }
-}
-
-private extension HelloView {
-    
-    func countryFlag(_ countryCode: String) -> String {
-      String(String.UnicodeScalarView(countryCode.unicodeScalars.compactMap {
-        UnicodeScalar(127397 + $0.value)
-      }))
     }
 }
 
