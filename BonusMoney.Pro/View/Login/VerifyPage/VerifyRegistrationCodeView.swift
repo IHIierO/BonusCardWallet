@@ -10,6 +10,7 @@ import SwiftUI
 struct VerifyRegistrationCodeView: View {
     @State private var smsCode: [String] = ["","","",""]
     @StateObject var otpViewModel: OTPViewModel = .init()
+    @EnvironmentObject var viewModel: LoginViewModel
     
     var body: some View {
         ZStack {
@@ -32,24 +33,6 @@ struct VerifyRegistrationCodeView: View {
                 
               OTPTextField()
                     .environmentObject(otpViewModel)
-                
-//                HStack {
-//                    Spacer(minLength: 40)
-//                    ForEach((0..<smsCode.count), id: \.self) { field in
-//                        VStack{
-//                            TextField("", text: $smsCode[field])
-//                            Divider()
-//                                .overlay {
-//                                    Color(hex: Colors.mainText.rawValue)
-//                                        .frame(height: 2)
-//                                }
-//                        }
-//                        .padding()
-//                    }
-//
-//                    Spacer(minLength: 40)
-//                }
-                
                 
                 CountdownTimerView(seconds: 37, text: "Запросить SMS")
                     .foregroundColor(.secondText)
@@ -75,11 +58,16 @@ struct VerifyRegistrationCodeView: View {
                 .opacity(otpViewModel.checkStates() ? 0.4 : 1)
             }
         }
+        .onAppear {
+            //viewModel.requestPhoneVerification(verificationType: .sms)
+        }
     }
 }
 
 struct VerifyRegistrationCodeView_Previews: PreviewProvider {
     static var previews: some View {
+        @ObservedObject var viewModel = LoginViewModel()
         VerifyRegistrationCodeView()
+            .environmentObject(viewModel)
     }
 }

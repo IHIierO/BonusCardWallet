@@ -17,6 +17,7 @@ struct OTPTextField: View {
             ForEach(0..<4, id: \.self) { index in
                 VStack(spacing: Constants.middle_half_margin) {
                     TextField("", text: $otpViewModel.otpFields[index])
+                        .foregroundColor(Color.mainText)
                         .keyboardType(.numberPad)
                         .textContentType(.oneTimeCode)
                         .multilineTextAlignment(.center)

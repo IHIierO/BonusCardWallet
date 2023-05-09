@@ -33,10 +33,13 @@ struct PhoneNumberPage: View {
                             .foregroundColor(Color(hex: Colors.secondText.rawValue))
                             .padding(.leading)
                     }
-                    TextField("Phone Number", text: Binding(
+                    TextField(text: Binding(
                         get: { (viewModel.phoneNumber) },
                         set: { viewModel.phoneNumber = $0.applyingMask(globalVariables.globalLanguage.phoneNumberMask, replacementCharacter: LocalizationService.shared.replacementChar) }
-                    ))
+                    ), label: {
+                        Text("+7")
+                            .foregroundColor(Color.secondText)
+                    })
                         .padding(.horizontal)
                         .padding(.top)
                         .foregroundColor(Color(hex: Colors.mainText.rawValue))
@@ -84,6 +87,7 @@ struct PhoneNumberPage: View {
                         }
                         .frame(width: 200, height: 40)
                 }
+                .disabled(viewModel.validate())
             }
             
             if wantContinue {

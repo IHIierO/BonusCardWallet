@@ -59,7 +59,8 @@ struct VerifyCallToPhoneView: View {
                 
                 if globalVariables.requestVerificationType == .all {
                     
-                    NavigationLink(destination: VerifyRegistrationCodeView(), isActive: $goToSMSConfirm) {
+                    NavigationLink(destination: VerifyRegistrationCodeView()
+                        .environmentObject(viewModel), isActive: $goToSMSConfirm) {
                         Text("Запросить SMS")
                             .foregroundColor(.blue)
                     }
@@ -67,7 +68,7 @@ struct VerifyCallToPhoneView: View {
                 }
                 
                 Button {
-                    viewModel.requestPhoneVerification()
+                    viewModel.requestPhoneVerification(verificationType: .callPass)
                     print("Новый номер запрошен")
                 } label: {
                     Text("Запросить номер для звонка")

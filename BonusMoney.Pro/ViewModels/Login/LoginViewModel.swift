@@ -15,6 +15,14 @@ final class LoginViewModel: ObservableObject {
     @Published var verifyUser: VerifyModel?
     @Published var showAlert = false
     
+    func validate() -> Bool {
+        print("PhoneNumber: \(phoneNumber)")
+                let PHONE_REGEX = "^\\+7 \\(\\d{3}\\) \\d{3}-\\d{2}-\\d{2}$"
+                let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
+                let result = phoneTest.evaluate(with: phoneNumber)
+        print("Result: \(result)")
+                return !result
+            }
     
     func checkAvailableTypes() {
         guard let currentModel = phoneVerificationModel else {return}
@@ -55,8 +63,8 @@ final class LoginViewModel: ObservableObject {
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
-    func requestPhoneVerification() {
-        RequestManager.shared.requestPhoneVerification(for: phoneNumber) {[weak self] result in
+    func requestPhoneVerification(verificationType: GlobalVariables.RequestVerificationType = .null) {
+        RequestManager.shared.requestPhoneVerification(for: phoneNumber, verificationType: verificationType) {[weak self] result in
             guard let strongSelf = self else {return}
             switch result {
             case .success(let result):
