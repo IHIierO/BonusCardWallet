@@ -22,5 +22,7 @@ final class GlobalVariables: ObservableObject {
     }
     
     @Published var requestVerificationType: RequestVerificationType = .null
+    @Published var phoneNextSendIn: Int = 0
+    @Published var smsNextSendIn: Int = 0
 }
 

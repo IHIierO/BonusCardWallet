@@ -26,6 +26,7 @@ final class OTPViewModel: ObservableObject {
         }
         return false
     }
+    
 }
 
 enum OTPField {

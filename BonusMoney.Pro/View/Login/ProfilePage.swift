@@ -65,18 +65,14 @@ struct ProfilePage: View {
                         .padding(.horizontal, 50)
                         
                     }
-                    .padding()
+                    .padding(.vertical, Constants.small_margin)
                 }
-                Button {
-                    print("Button pressed")
-                } label: {
-                    Text("Продолжить")
-                        .foregroundColor(.white)
-                        .background {
-                            RoundedRectangle(cornerRadius: 10)
-                                .frame(width: 200, height: 40, alignment: .center)
-                        }
-                }
+                
+                FilledButton(title: "Продолжить", action: {
+                    
+                }, color: Color.activeElement, radius: Constants.btn_radius)
+                .padding(.horizontal, Constants.large_double_margin)
+                .padding(.top)
             }
             .ignoresSafeArea(.keyboard)
         }

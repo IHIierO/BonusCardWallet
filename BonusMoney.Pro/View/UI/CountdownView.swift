@@ -8,29 +8,29 @@
 import SwiftUI
 
 struct CountdownTimerView: View {
-    let seconds: Int
+    let duration: Int // длительность таймера в миллисекундах
     let text: String
-    @State private var timeRemaining: Int
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    
-    init(seconds: Int, text: String) {
-        self.seconds = seconds
+    @State private var timeRemaining: Int // время обратного отсчета в миллисекундах
+    let timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect() // публикация таймера каждые 0.01 секунды (10 миллисекунд)
+
+    init(duration: Int, text: String) {
+        self.duration = duration
         self.text = text
-        self._timeRemaining = State(initialValue: seconds)
+        self._timeRemaining = State(initialValue: duration)
     }
-    
+
     var body: some View {
         Text("\(text) \(timeString(time: timeRemaining))")
             .onReceive(timer) { _ in
                 if timeRemaining > 0 {
-                    timeRemaining -= 1
+                    timeRemaining -= 10 // уменьшаем время обратного отсчета на 10 миллисекунд каждый раз
                 }
             }
     }
-    
+
     func timeString(time: Int) -> String {
-        let minutes = (time / 60) % 60
-        let seconds = time % 60
+        let seconds = (time / 1000) % 60
+        let minutes = (time / (1000 * 60)) % 60
         return String(format: "%02d:%02d", minutes, seconds)
     }
 }

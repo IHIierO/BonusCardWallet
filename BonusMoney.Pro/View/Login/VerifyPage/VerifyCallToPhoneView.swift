@@ -18,6 +18,8 @@ struct VerifyCallToPhoneView: View {
     @State private var goToSMSConfirm = false
     @State private var getPhoneNumberConfirm = false
     
+    @Environment(\.scenePhase) var scenePhase
+    
     var body: some View {
         ZStack {
             Color.mainBackground
@@ -38,27 +40,13 @@ struct VerifyCallToPhoneView: View {
                 .padding()
                 
                 
-                Button {
-                    print("Button pressed")
-//                    confirm.toggle()
+                FilledButton(title: "Позвонить", action: {
                     viewModel.verifyCallToNumber()
-                } label: {
-                    Text("Позвонить")
-                        .foregroundColor(.white)
-                        .background {
-                            RoundedRectangle(cornerRadius: 10)
-                                .frame(width: 200, height: 40, alignment: .center)
-                                .overlay {
-                                    Color(hex: Colors.mainText.rawValue)
-                                        .cornerRadius(10)
-                                }
-                        }
-                }
-                .padding()
-                .padding(.top, 40)
+                }, color: Color.mainText, radius: Constants.btn_radius)
+                .padding(.horizontal, Constants.large_double_margin)
+                
                 
                 if globalVariables.requestVerificationType == .all {
-                    
                     NavigationLink(destination: VerifyRegistrationCodeView()
                         .environmentObject(viewModel), isActive: $goToSMSConfirm) {
                         Text("Запросить SMS")
@@ -78,21 +66,14 @@ struct VerifyCallToPhoneView: View {
 
                 Spacer()
                 
-                Button {
-                    print("Button pressed")
-                    viewModel.getVerifyUser()
-                } label: {
-                    Text("Продолжить")
-                        .foregroundColor(.white)
-                        .background {
-                            RoundedRectangle(cornerRadius: 10)
-                                .frame(width: 200, height: 40, alignment: .center)
-                        }
-                        .frame(width: 200, height: 40)
-                }
+                FilledButton(title: "Продолжить", action: {
+                    viewModel.getVerifyUser(code: nil)
+                }, color: Color.activeElement, radius: Constants.btn_radius)
+                .padding(.horizontal, Constants.large_double_margin)
+                
             }
             .onAppear{
-                //viewModel.requestPhoneVerification()
+                //viewModel.requestPhoneVerification(ver)
             }
             
             if viewModel.showAlert {
@@ -121,6 +102,12 @@ struct VerifyCallToPhoneView: View {
             
             NavigationLink(destination: ProfilePage(), isActive: $goToProfilePage) {
                 EmptyView()
+            }
+        }
+        .onChange(of: scenePhase) { newPhase in
+            if newPhase == .active {
+                print("You can use some function")
+                viewModel.getVerifyUser(code: nil)
             }
         }
     }

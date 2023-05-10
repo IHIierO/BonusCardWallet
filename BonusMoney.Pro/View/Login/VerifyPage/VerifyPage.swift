@@ -23,6 +23,10 @@ struct VerifyPage: View {
                 VerifyRegistrationCodeView()
             } else if globalVariables.requestVerificationType == .null{
                 ProgressView()
+                    .background {
+                        Color.mainBackground
+                            .ignoresSafeArea()
+                    }
             }
             
         }

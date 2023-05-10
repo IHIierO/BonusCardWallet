@@ -16,11 +16,9 @@ final class LoginViewModel: ObservableObject {
     @Published var showAlert = false
     
     func validate() -> Bool {
-        print("PhoneNumber: \(phoneNumber)")
                 let PHONE_REGEX = "^\\+7 \\(\\d{3}\\) \\d{3}-\\d{2}-\\d{2}$"
                 let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
                 let result = phoneTest.evaluate(with: phoneNumber)
-        print("Result: \(result)")
                 return !result
             }
     
@@ -32,16 +30,22 @@ final class LoginViewModel: ObservableObject {
         }else if availableTypes.count == 1 {
             if availableTypes[0].type == "CALL_PASS" {
                 GlobalVariables.shared.requestVerificationType = .callPass
+                GlobalVariables.shared.phoneNextSendIn = availableTypes[0].nextSendIn
             } else if availableTypes[0].type == "SMS" {
                 GlobalVariables.shared.requestVerificationType = .sms
+                GlobalVariables.shared.smsNextSendIn = availableTypes[0].nextSendIn
             }
         } else if availableTypes.count == 2 {
-            let firstType = availableTypes[0].type
-            let secondType = availableTypes[1].type
-            if firstType == "CALL_PASS" && secondType == "SMS" {
+            let firstType = availableTypes[0]
+            let secondType = availableTypes[1]
+            if firstType.type == "CALL_PASS" && secondType.type == "SMS" {
                 GlobalVariables.shared.requestVerificationType = .all
-            } else if firstType == "SMS" && secondType == "CALL_PASS" {
+                GlobalVariables.shared.phoneNextSendIn = firstType.nextSendIn
+                GlobalVariables.shared.smsNextSendIn = secondType.nextSendIn
+            } else if firstType.type == "SMS" && secondType.type == "CALL_PASS" {
                 GlobalVariables.shared.requestVerificationType = .all
+                GlobalVariables.shared.smsNextSendIn = firstType.nextSendIn
+                GlobalVariables.shared.phoneNextSendIn = secondType.nextSendIn
             }
         }
         print("Type in VM: \(GlobalVariables.shared.requestVerificationType)")
@@ -60,6 +64,7 @@ final class LoginViewModel: ObservableObject {
             UIApplication.shared.canOpenURL(url) else {
             return
         }
+        
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
@@ -77,21 +82,14 @@ final class LoginViewModel: ObservableObject {
         }
     }
     
-    func getVerifyUser() {
+    func getVerifyUser(code: String?) {
         guard let currentModel = phoneVerificationModel else {return}
         
-        let currentSendType = currentModel.currentSendType
-        
-        guard let number = currentModel.availableTypes.first(where: {$0.type == currentSendType})?.callToPhone else {return}
-        
-        let cleanNumber = number.components(separatedBy: CharacterSet.decimalDigits.inverted).joined(separator: "")
-        
-        RequestManager.shared.verifyCallToPhone(from: phoneNumber, to: cleanNumber) {[weak self] result in
+        let completionHandler: (Result<VerifyModel, NetworkError>) -> Void = { [weak self] result in
             guard let strongSelf = self else {return}
             DispatchQueue.main.async {
                 switch result {
                 case .success(let result):
-                    
                     strongSelf.verifyUser = result
                     strongSelf.showAlert = true
                     strongSelf.alertItem = AlertModel(title: "", message: "Мы нашли аккаунт, который был привязан к номеру телефона: \(result.phone). Оставить данные профиля, которые были указаны ранее или ввести их заново?", status: .complete)
@@ -102,6 +100,19 @@ final class LoginViewModel: ObservableObject {
                     print("Request Phone Verification Error: \(error.localizedDescription)")
                 }
             }
+        }
+        
+        if currentModel.currentSendType == "CALL_PASS" {
+            let currentSendType = currentModel.currentSendType
+            
+            guard let number = currentModel.availableTypes.first(where: {$0.type == currentSendType})?.callToPhone else {return}
+            
+            let cleanNumber = number.components(separatedBy: CharacterSet.decimalDigits.inverted).joined(separator: "")
+            
+            RequestManager.shared.verifyCallToPhone(from: phoneNumber, to: cleanNumber, completion: completionHandler)
+        } else if currentModel.currentSendType == "SMS"{
+            guard let code = code else {return}
+            RequestManager.shared.verifyRegistrationCode(from: phoneNumber, code: code, completion: completionHandler)
         }
     }
 }

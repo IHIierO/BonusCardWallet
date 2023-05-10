@@ -17,14 +17,11 @@ struct CustomButton: ButtonStyle {
             configuration.label
             .padding(.vertical, Constants.small_double_margin)
             .background {
-                RoundedRectangle(cornerRadius: radius)
+                RoundedRectangle(cornerRadius: radius, style: .continuous)
+                    .fill(color)
                     .frame(maxWidth: .infinity)
-                    .overlay {
-                        color.cornerRadius(radius)
-                    }
             }
             .frame(maxWidth: .infinity)
-       
     }
 }
 

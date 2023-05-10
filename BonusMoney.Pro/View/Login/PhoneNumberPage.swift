@@ -49,6 +49,14 @@ struct PhoneNumberPage: View {
                         .keyboardType(.phonePad)
                         .textContentType(.telephoneNumber)
                         .focused($focusItem)
+                        .toolbar{
+                            ToolbarItemGroup(placement: .keyboard) {
+                                Spacer()
+                                Button("Done") {
+                                    focusItem = false
+                                }
+                            }
+                        }
                         .onChange(of: viewModel.phoneNumber) { newValue in
                             if newValue.count > 17 {
                                 viewModel.phoneNumber = String(newValue.prefix(18))
@@ -61,7 +69,7 @@ struct PhoneNumberPage: View {
                         .overlay(Color(hex: Colors.mainText.rawValue))
                         .padding(.horizontal)
                 }
-                
+               
                 /// Country menu
                 LocalizedMenu {
                     print("Choose alert")
@@ -74,20 +82,14 @@ struct PhoneNumberPage: View {
                 
                 Spacer()
                 
-                Button {
-                    print("Button pressed")
+                FilledButton(title: "Продолжить", action: {
                     viewModel.requestPhoneVerification()
                     wantContinue.toggle()
-                } label: {
-                    Text("Продолжить")
-                        .foregroundColor(.white)
-                        .background {
-                            RoundedRectangle(cornerRadius: 10)
-                                .frame(width: 200, height: 40, alignment: .center)
-                        }
-                        .frame(width: 200, height: 40)
-                }
+                }, color: Color.activeElement, radius: Constants.btn_radius)
+                .padding(.horizontal, Constants.large_margin)
                 .disabled(viewModel.validate())
+                .opacity(viewModel.validate() ? 0.4 : 1)
+                
             }
             
             if wantContinue {
@@ -121,10 +123,6 @@ struct PhoneNumberPage: View {
             }
         }
         .ignoresSafeArea(.keyboard)
-        .onTapGesture{
-                    focusItem = false
-                }
-        
         .navigationBarTitleDisplayMode(.inline)
     }
 }

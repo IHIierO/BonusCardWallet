@@ -76,5 +76,41 @@ final class RequestManager {
         task.resume()
     }
     
+    func verifyRegistrationCode(from outgoingNumber: String, code: String, completion: @escaping (Result<VerifyModel, NetworkError>) -> Void) {
+        let parameters = "{\r\n    \"phone\": \"\(outgoingNumber)\",\r\n    \"code\": \"\(code)\"\r\n} "
+        let postData = parameters.data(using: .utf8)
+
+        var request = URLRequest(url: URL(string: "https://bm-app.com/mobileapp/register/verifyPhoneVerificationSmsCode")!,timeoutInterval: Double.infinity)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        request.httpMethod = "POST"
+        request.httpBody = postData
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            let decodingError = error
+            let networkError = HTTPResponseHandler.handleResponse(data: data, response: response, decodingError: decodingError)
+            
+            if let error = networkError {
+                completion(.failure(error))
+            } else {
+                guard let data = data else {
+                    completion(.failure(.notFound))
+                    return
+                }
+                do {
+                    let result = try JSONDecoder().decode(VerifyModel.self, from: data)
+                    completion(.success(result))
+                }
+                catch {
+                    completion(.failure(NetworkError.underlyingError(error)))
+                    print("Catch error: \(String(describing: error))")
+                }
+            }
+          //print(String(data: data, encoding: .utf8)!)
+        }
+
+        task.resume()
+    }
+    
     
 }

@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct VerifyRegistrationCodeView: View {
-    @State private var smsCode: [String] = ["","","",""]
     @StateObject var otpViewModel: OTPViewModel = .init()
     @EnvironmentObject var viewModel: LoginViewModel
+    @EnvironmentObject var globalVariables: GlobalVariables
+    
+    @State private var goToProfilePage = false
+    @FocusState private var focusItem: Bool
     
     var body: some View {
         ZStack {
@@ -32,30 +35,60 @@ struct VerifyRegistrationCodeView: View {
                 .padding()
                 
               OTPTextField()
+                    .focused($focusItem)
                     .environmentObject(otpViewModel)
+                    .toolbar{
+                        ToolbarItemGroup(placement: .keyboard) {
+                            Spacer()
+                            Button("Done") {
+                                focusItem = false
+                            }
+                        }
+                    }
                 
-                CountdownTimerView(seconds: 37, text: "Запросить SMS")
+                CountdownTimerView(duration: globalVariables.smsNextSendIn, text: "Запросить SMS")
                     .foregroundColor(.secondText)
                     .padding(.vertical)
-                CountdownTimerView(seconds: 37, text: "Запросить номер для звонка")
+                CountdownTimerView(duration: globalVariables.phoneNextSendIn, text: "Запросить номер для звонка")
                     .foregroundColor(.secondText)
                     .padding(.bottom)
                 Spacer()
-                Button {
-                    print("Button pressed")
-                } label: {
-                    Text("Продолжить")
-                        .foregroundColor(.white)
-                        .background {
-                            RoundedRectangle(cornerRadius: Constants.btn_radius, style: .continuous)
-                                .fill(Color.activeElement)
-                                .frame(width: 200, height: 40, alignment: .center)
-                        }
-                        .padding()
-                        //.frame(width: 200, height: 40)
-                }
+                
+                FilledButton(title: "Продолжить", action: {
+                    viewModel.getVerifyUser(code: otpViewModel.otpString)
+                }, color: Color.activeElement, radius: Constants.btn_radius)
+                .padding(.horizontal, Constants.large_double_margin)
                 .disabled(otpViewModel.checkStates())
                 .opacity(otpViewModel.checkStates() ? 0.4 : 1)
+            }
+            .ignoresSafeArea(.keyboard)
+            
+            if viewModel.showAlert {
+                if let customAlert = viewModel.alertItem {
+                    if customAlert.status == .error {
+                        CustomAlert {
+                            AlertWithOneButton(action: {
+                                viewModel.showAlert = false
+                            }, alertTitle: customAlert.message)
+                        } closeAction: {
+                            viewModel.showAlert = false
+                        }
+
+                    } else if customAlert.status == .complete {
+                        CustomAlert {
+                            AlertWithOneButton(action: {
+                                viewModel.showAlert = false
+                                goToProfilePage = true
+                            }, alertTitle: customAlert.message)
+                        } closeAction: {
+                            viewModel.showAlert = false
+                        }
+                    }
+                }
+            }
+            
+            NavigationLink(destination: ProfilePage(), isActive: $goToProfilePage) {
+                EmptyView()
             }
         }
         .onAppear {
@@ -67,7 +100,9 @@ struct VerifyRegistrationCodeView: View {
 struct VerifyRegistrationCodeView_Previews: PreviewProvider {
     static var previews: some View {
         @ObservedObject var viewModel = LoginViewModel()
+        @ObservedObject var globalVariables = GlobalVariables()
         VerifyRegistrationCodeView()
             .environmentObject(viewModel)
+            .environmentObject(globalVariables)
     }
 }
