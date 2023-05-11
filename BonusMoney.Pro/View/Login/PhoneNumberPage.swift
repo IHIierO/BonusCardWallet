@@ -33,6 +33,7 @@ struct PhoneNumberPage: View {
                             .foregroundColor(Color(hex: Colors.secondText.rawValue))
                             .padding(.leading)
                     }
+                    
                     TextField(text: Binding(
                         get: { (viewModel.phoneNumber) },
                         set: { viewModel.phoneNumber = $0.applyingMask(globalVariables.globalLanguage.phoneNumberMask, replacementCharacter: LocalizationService.shared.replacementChar) }
@@ -57,13 +58,16 @@ struct PhoneNumberPage: View {
                                 }
                             }
                         }
-                        .onChange(of: viewModel.phoneNumber) { newValue in
-                            if newValue.count > 17 {
-                                viewModel.phoneNumber = String(newValue.prefix(18))
-                                focusItem = false
-                                print("Phone Number: \(viewModel.phoneNumber)")
-                            }
+                        .onSubmit {
+                            viewModel.updatePhoneNumber()
                         }
+//                        .onChange(of: viewModel.phoneNumber) { newValue in
+//                            if newValue.count > 17 {
+//                                viewModel.phoneNumber = String(newValue.prefix(18))
+//                                focusItem = false
+//                                print("Phone Number: \(viewModel.phoneNumber)")
+//                            }
+//                        }
                         
                     Divider()
                         .overlay(Color(hex: Colors.mainText.rawValue))

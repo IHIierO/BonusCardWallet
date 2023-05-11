@@ -15,6 +15,12 @@ final class LoginViewModel: ObservableObject {
     @Published var verifyUser: VerifyModel?
     @Published var showAlert = false
     
+    func updatePhoneNumber() {
+            if phoneNumber.count > 18 {
+                phoneNumber.removeSubrange(phoneNumber.index(phoneNumber.startIndex, offsetBy: 18)...)
+            }
+        }
+    
     func validate() -> Bool {
                 let PHONE_REGEX = "^\\+7 \\(\\d{3}\\) \\d{3}-\\d{2}-\\d{2}$"
                 let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
