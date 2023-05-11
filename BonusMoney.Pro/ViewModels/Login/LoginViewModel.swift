@@ -15,9 +15,9 @@ final class LoginViewModel: ObservableObject {
     @Published var verifyUser: VerifyModel?
     @Published var showAlert = false
     
-    func updatePhoneNumber() {
-            if phoneNumber.count > 18 {
-                phoneNumber.removeSubrange(phoneNumber.index(phoneNumber.startIndex, offsetBy: 18)...)
+    func updatePhoneNumber(for mask: String) {
+        if phoneNumber.count > mask.count {
+            phoneNumber.removeSubrange(phoneNumber.index(phoneNumber.startIndex, offsetBy: mask.count)...)
             }
         }
     

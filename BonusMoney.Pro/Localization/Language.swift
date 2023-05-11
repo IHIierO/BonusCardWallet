@@ -32,9 +32,9 @@ enum Language: String, CaseIterable {
     var phoneNumberMask: String {
         switch self {
         case .russian:
-            return "+X (XXX) XXX-XX-XX"
+            return "X (XXX) XXX-XX-XX"
         case .kz:
-            return "+X (XXX) XXX-XX-XX"
+            return "XXX (XXX) XXX-XX-XX"
         }
     }
 

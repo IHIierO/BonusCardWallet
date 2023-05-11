@@ -38,7 +38,7 @@ struct PhoneNumberPage: View {
                         get: { (viewModel.phoneNumber) },
                         set: { viewModel.phoneNumber = $0.applyingMask(globalVariables.globalLanguage.phoneNumberMask, replacementCharacter: LocalizationService.shared.replacementChar) }
                     ), label: {
-                        Text("+7")
+                        Text("+")
                             .foregroundColor(Color.secondText)
                     })
                         .padding(.horizontal)
@@ -59,7 +59,7 @@ struct PhoneNumberPage: View {
                             }
                         }
                         .onSubmit {
-                            viewModel.updatePhoneNumber()
+                            viewModel.updatePhoneNumber(for: globalVariables.globalLanguage.phoneNumberMask)
                         }
 //                        .onChange(of: viewModel.phoneNumber) { newValue in
 //                            if newValue.count > 17 {
