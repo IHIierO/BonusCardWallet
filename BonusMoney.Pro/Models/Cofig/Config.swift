@@ -12,7 +12,9 @@ final class GlobalVariables: ObservableObject {
     
     static let shared = GlobalVariables()
  
-   @Published var globalLanguage = LocalizationService.shared.language
+    @AppStorage("language") var globalLanguage = LocalizationService.shared.language
+        
+  // @Published var globalLanguage = LocalizationService.shared.language
     
     enum RequestVerificationType: String {
         case callPass = "CALL_PASS"

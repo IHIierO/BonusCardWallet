@@ -31,7 +31,7 @@ struct VerifyPage: View {
             
         }
         .onAppear {
-            viewModel.checkAvailableTypes()
+            viewModel.checkAvailableTypes(using: globalVariables)
             print("Type in VerifyPage: \(globalVariables.requestVerificationType)")
         }
     }

@@ -22,34 +22,34 @@ final class LoginViewModel: ObservableObject {
                 return !result
             }
     
-    func checkAvailableTypes() {
-        guard let currentModel = phoneVerificationModel else {return}
-        let availableTypes = currentModel.availableTypes
-        if availableTypes.count == 0 {
-            GlobalVariables.shared.requestVerificationType = .null
-        }else if availableTypes.count == 1 {
-            if availableTypes[0].type == "CALL_PASS" {
-                GlobalVariables.shared.requestVerificationType = .callPass
-                GlobalVariables.shared.phoneNextSendIn = availableTypes[0].nextSendIn
-            } else if availableTypes[0].type == "SMS" {
-                GlobalVariables.shared.requestVerificationType = .sms
-                GlobalVariables.shared.smsNextSendIn = availableTypes[0].nextSendIn
+    func checkAvailableTypes(using globalVariables: GlobalVariables) {
+            guard let currentModel = phoneVerificationModel else {return}
+            let availableTypes = currentModel.availableTypes
+            if availableTypes.count == 0 {
+                globalVariables.requestVerificationType = .null
+            } else if availableTypes.count == 1 {
+                if availableTypes[0].type == "CALL_PASS" {
+                    globalVariables.requestVerificationType = .callPass
+                    globalVariables.phoneNextSendIn = availableTypes[0].nextSendIn
+                } else if availableTypes[0].type == "SMS" {
+                    globalVariables.requestVerificationType = .sms
+                    globalVariables.smsNextSendIn = availableTypes[0].nextSendIn
+                }
+            } else if availableTypes.count == 2 {
+                let firstType = availableTypes[0]
+                let secondType = availableTypes[1]
+                if firstType.type == "CALL_PASS" && secondType.type == "SMS" {
+                    globalVariables.requestVerificationType = .all
+                    globalVariables.phoneNextSendIn = firstType.nextSendIn
+                    globalVariables.smsNextSendIn = secondType.nextSendIn
+                } else if firstType.type == "SMS" && secondType.type == "CALL_PASS" {
+                    globalVariables.requestVerificationType = .all
+                    globalVariables.smsNextSendIn = firstType.nextSendIn
+                    globalVariables.phoneNextSendIn = secondType.nextSendIn
+                }
             }
-        } else if availableTypes.count == 2 {
-            let firstType = availableTypes[0]
-            let secondType = availableTypes[1]
-            if firstType.type == "CALL_PASS" && secondType.type == "SMS" {
-                GlobalVariables.shared.requestVerificationType = .all
-                GlobalVariables.shared.phoneNextSendIn = firstType.nextSendIn
-                GlobalVariables.shared.smsNextSendIn = secondType.nextSendIn
-            } else if firstType.type == "SMS" && secondType.type == "CALL_PASS" {
-                GlobalVariables.shared.requestVerificationType = .all
-                GlobalVariables.shared.smsNextSendIn = firstType.nextSendIn
-                GlobalVariables.shared.phoneNextSendIn = secondType.nextSendIn
-            }
+            print("Type in VM: \(globalVariables.requestVerificationType)")
         }
-        print("Type in VM: \(GlobalVariables.shared.requestVerificationType)")
-    }
     
     func verifyCallToNumber() {
         guard let currentModel = phoneVerificationModel else {return}

@@ -13,7 +13,7 @@ import SwiftUI
 @main
 struct BonusMoney_ProApp: App {
     
-    @StateObject var globalVariables = GlobalVariables.shared
+    @StateObject var globalVariables = GlobalVariables()
     
     var body: some Scene {
         WindowGroup {
