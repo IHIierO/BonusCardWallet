@@ -2,7 +2,7 @@
 
 <p align="center">
 
-https://github.com/IHIierO/BonusCardWallet/assets/108677019/8cad8983-d1ab-48c5-bb59-eab1162ff5c3
+<img src="https://github.com/IHIierO/BonusCardWallet/assets/108677019/514d65d1-93df-4c45-a860-74217ef3e8da" width="200" height="434">
 
 </p>
 
