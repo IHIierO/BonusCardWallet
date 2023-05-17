@@ -1,8 +1,8 @@
 # BonusCardWallet
 
 <p align="center">
-
-<img src="https://github.com/IHIierO/BonusCardWallet/assets/108677019/b1432224-cffa-430e-9dd3-237ff5539b5e" width="200" height="434">
+  
+<img src="https://github.com/IHIierO/BonusCardWallet/assets/108677019/9e221714-6b7b-41a3-ae67-03531823320d" width="200" height="434">
 <img src="https://github.com/IHIierO/BonusCardWallet/assets/108677019/514d65d1-93df-4c45-a860-74217ef3e8da" width="200" height="434">
 
 </p>
