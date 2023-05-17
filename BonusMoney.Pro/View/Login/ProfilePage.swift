@@ -182,11 +182,6 @@ struct ProfilePage: View {
         }
         .onAppear{
             viewModel.phone = phoneNumber
-            guard let data = globalVariables.userProfile else {
-                return
-            }
-            let userProfile = try? JSONDecoder().decode(ProfileModel.self, from: data)
-            print("Global user Profile: \(userProfile)")
         }
     }
 }

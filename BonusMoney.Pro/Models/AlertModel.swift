@@ -15,6 +15,6 @@ struct AlertModel: Identifiable {
 }
 
 enum AlertStatus {
-case complete
-case error
+    case complete
+    case error
 }

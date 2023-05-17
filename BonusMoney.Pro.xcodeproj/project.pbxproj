@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		394ED9EB2A04E56A000A3D3F /* Notification.Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394ED9EA2A04E56A000A3D3F /* Notification.Name.swift */; };
 		394ED9ED2A04EDBE000A3D3F /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394ED9EC2A04EDBE000A3D3F /* CountdownView.swift */; };
 		394ED9EF2A04EFD7000A3D3F /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394ED9EE2A04EFD7000A3D3F /* CustomAlert.swift */; };
 		394ED9F12A04F3E6000A3D3F /* LocalizationMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394ED9F02A04F3E6000A3D3F /* LocalizationMenu.swift */; };
@@ -16,6 +15,8 @@
 		394EDA172A0A85AA000A3D3F /* OTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394EDA162A0A85AA000A3D3F /* OTPTextField.swift */; };
 		394EDA192A0A867C000A3D3F /* OTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394EDA182A0A867C000A3D3F /* OTPViewModel.swift */; };
 		394EDA1B2A0E4F2E000A3D3F /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394EDA1A2A0E4F2E000A3D3F /* ProfileViewModel.swift */; };
+		397B8EE32A14EF4700B2D835 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B8EE22A14EF4700B2D835 /* NotificationName.swift */; };
+		397B8EE92A14F7CC00B2D835 /* RequestVerificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B8EE82A14F7CC00B2D835 /* RequestVerificationType.swift */; };
 		39D1FEA22A0251B8001825D3 /* BonusMoney_ProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FEA12A0251B8001825D3 /* BonusMoney_ProApp.swift */; };
 		39D1FEA42A0251B8001825D3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FEA32A0251B8001825D3 /* ContentView.swift */; };
 		39D1FEA62A0251BA001825D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39D1FEA52A0251BA001825D3 /* Assets.xcassets */; };
@@ -45,12 +46,9 @@
 		39D1FEE92A03D3D2001825D3 /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FEE82A03D3D2001825D3 /* AlertModel.swift */; };
 		39D1FEEC2A03EECB001825D3 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FEEB2A03EECB001825D3 /* ButtonStyle.swift */; };
 		39D1FEEE2A03F6A7001825D3 /* LocalizedMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FEED2A03F6A7001825D3 /* LocalizedMenu.swift */; };
-		39D1FEF02A03FCBF001825D3 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FEEF2A03FCBF001825D3 /* Alert.swift */; };
-		39D1FEF22A0434B5001825D3 /* PhoneNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FEF12A0434B5001825D3 /* PhoneNumberTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		394ED9EA2A04E56A000A3D3F /* Notification.Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.Name.swift; sourceTree = "<group>"; };
 		394ED9EC2A04EDBE000A3D3F /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
 		394ED9EE2A04EFD7000A3D3F /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		394ED9F02A04F3E6000A3D3F /* LocalizationMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationMenu.swift; sourceTree = "<group>"; };
@@ -59,6 +57,8 @@
 		394EDA162A0A85AA000A3D3F /* OTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
 		394EDA182A0A867C000A3D3F /* OTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModel.swift; sourceTree = "<group>"; };
 		394EDA1A2A0E4F2E000A3D3F /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		397B8EE22A14EF4700B2D835 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
+		397B8EE82A14F7CC00B2D835 /* RequestVerificationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestVerificationType.swift; sourceTree = "<group>"; };
 		39D1FE9E2A0251B8001825D3 /* BonusMoney.Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BonusMoney.Pro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39D1FEA12A0251B8001825D3 /* BonusMoney_ProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusMoney_ProApp.swift; sourceTree = "<group>"; };
 		39D1FEA32A0251B8001825D3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -89,8 +89,6 @@
 		39D1FEE82A03D3D2001825D3 /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
 		39D1FEEB2A03EECB001825D3 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		39D1FEED2A03F6A7001825D3 /* LocalizedMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedMenu.swift; sourceTree = "<group>"; };
-		39D1FEEF2A03FCBF001825D3 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
-		39D1FEF12A0434B5001825D3 /* PhoneNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +105,6 @@
 		394ED9E72A04E4A5000A3D3F /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				39D1FEF12A0434B5001825D3 /* PhoneNumberTextField.swift */,
 				394ED9EC2A04EDBE000A3D3F /* CountdownView.swift */,
 				394ED9F02A04F3E6000A3D3F /* LocalizationMenu.swift */,
 				39D1FEBE2A026145001825D3 /* AlertWithOneButton.swift */,
@@ -123,6 +120,8 @@
 				394ED9F52A053644000A3D3F /* Config.swift */,
 				39D1FEC12A0266D7001825D3 /* Colors.swift */,
 				39D1FED32A02B0EC001825D3 /* Constants.swift */,
+				397B8EE22A14EF4700B2D835 /* NotificationName.swift */,
+				397B8EE82A14F7CC00B2D835 /* RequestVerificationType.swift */,
 			);
 			path = Cofig;
 			sourceTree = "<group>";
@@ -207,7 +206,6 @@
 				39D1FEC92A0288D9001825D3 /* Color+MainColor.swift */,
 				39D1FEB62A0255A9001825D3 /* String+Localized.swift */,
 				39D1FED92A03A343001825D3 /* String+PhoneNumber.swift */,
-				394ED9EA2A04E56A000A3D3F /* Notification.Name.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -224,7 +222,6 @@
 		39D1FEBD2A026120001825D3 /* Allert */ = {
 			isa = PBXGroup;
 			children = (
-				39D1FEEF2A03FCBF001825D3 /* Alert.swift */,
 				394ED9EE2A04EFD7000A3D3F /* CustomAlert.swift */,
 			);
 			path = Allert;
@@ -373,13 +370,12 @@
 				39D1FEC22A0266D7001825D3 /* Colors.swift in Sources */,
 				394ED9F12A04F3E6000A3D3F /* LocalizationMenu.swift in Sources */,
 				39D1FEB22A025426001825D3 /* HelloView.swift in Sources */,
-				39D1FEF02A03FCBF001825D3 /* Alert.swift in Sources */,
 				39D1FEB52A025588001825D3 /* Color+Hex.swift in Sources */,
 				39D1FEA42A0251B8001825D3 /* ContentView.swift in Sources */,
 				39D1FEEE2A03F6A7001825D3 /* LocalizedMenu.swift in Sources */,
 				39D1FEE92A03D3D2001825D3 /* AlertModel.swift in Sources */,
 				39D1FEDE2A03AFD0001825D3 /* LoginViewModel.swift in Sources */,
-				39D1FEF22A0434B5001825D3 /* PhoneNumberTextField.swift in Sources */,
+				397B8EE92A14F7CC00B2D835 /* RequestVerificationType.swift in Sources */,
 				39D1FEE22A03B8A9001825D3 /* NetworkError.swift in Sources */,
 				394EDA132A09125B000A3D3F /* VerifyPage.swift in Sources */,
 				394ED9F62A053644000A3D3F /* Config.swift in Sources */,
@@ -387,6 +383,7 @@
 				39D1FEE52A03CEA8001825D3 /* VerifyModel.swift in Sources */,
 				39D1FEEC2A03EECB001825D3 /* ButtonStyle.swift in Sources */,
 				39D1FEE02A03B6FE001825D3 /* PhoneVerificationModel.swift in Sources */,
+				397B8EE32A14EF4700B2D835 /* NotificationName.swift in Sources */,
 				39D1FEBA2A02560B001825D3 /* Language.swift in Sources */,
 				39D1FEC42A026C38001825D3 /* PhoneNumberPage.swift in Sources */,
 				394EDA1B2A0E4F2E000A3D3F /* ProfileViewModel.swift in Sources */,
@@ -400,7 +397,6 @@
 				39D1FECE2A028D72001825D3 /* ProfilePage.swift in Sources */,
 				39D1FEC62A0275B9001825D3 /* VerifyCallToPhoneView.swift in Sources */,
 				39D1FEB72A0255A9001825D3 /* String+Localized.swift in Sources */,
-				394ED9EB2A04E56A000A3D3F /* Notification.Name.swift in Sources */,
 				39D1FED02A028E40001825D3 /* ProfileModel.swift in Sources */,
 				394ED9EF2A04EFD7000A3D3F /* CustomAlert.swift in Sources */,
 			);

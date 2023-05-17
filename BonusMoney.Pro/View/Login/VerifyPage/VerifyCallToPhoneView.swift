@@ -72,11 +72,8 @@ struct VerifyCallToPhoneView: View {
                 .padding(.horizontal, Constants.large_double_margin)
                 
             }
-            .onAppear{
-                //viewModel.requestPhoneVerification(ver)
-            }
             
-            if viewModel.showAlert {
+            //if viewModel.showAlert {
                 if let customAlert = viewModel.alertItem {
                     if customAlert.status == .error {
                         CustomAlert {
@@ -98,7 +95,7 @@ struct VerifyCallToPhoneView: View {
                         }
                     }
                 }
-            }
+           // }
             
             NavigationLink(
                 destination: ProfilePage(phone: viewModel.phoneNumber)

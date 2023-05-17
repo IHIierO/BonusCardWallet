@@ -41,7 +41,6 @@ struct LocalizationMenu: View {
                         }
                     }
                 }
-                //.background(Color.elementsBackground)
             } header: {
                 Text("Выберете страну")
                     .foregroundColor(Color.secondText)

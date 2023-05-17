@@ -61,13 +61,6 @@ struct PhoneNumberPage: View {
                         .onSubmit {
                             viewModel.updatePhoneNumber(for: globalVariables.globalLanguage.phoneNumberMask)
                         }
-//                        .onChange(of: viewModel.phoneNumber) { newValue in
-//                            if newValue.count > 17 {
-//                                viewModel.phoneNumber = String(newValue.prefix(18))
-//                                focusItem = false
-//                                print("Phone Number: \(viewModel.phoneNumber)")
-//                            }
-//                        }
                         
                     Divider()
                         .overlay(Color(hex: Colors.mainText.rawValue))

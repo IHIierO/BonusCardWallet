@@ -74,7 +74,7 @@ final class LoginViewModel: ObservableObject {
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
-    func requestPhoneVerification(verificationType: GlobalVariables.RequestVerificationType = .null) {
+    func requestPhoneVerification(verificationType: RequestVerificationType = .null) {
         RequestManager.shared.requestPhoneVerification(for: phoneNumber, verificationType: verificationType) {[weak self] result in
             guard let strongSelf = self else {return}
             switch result {
@@ -99,6 +99,7 @@ final class LoginViewModel: ObservableObject {
                     strongSelf.verifyUser = result
                     strongSelf.showAlert = true
                     strongSelf.alertItem = AlertModel(title: "", message: "Мы нашли аккаунт, который был привязан к номеру телефона: \(result.phone). Оставить данные профиля, которые были указаны ранее или ввести их заново?", status: .complete)
+                    strongSelf.saveUserToken(token: result.token)
                     print("Verify User: \(result)")
                 case .failure(let error):
                     strongSelf.showAlert = true
@@ -120,5 +121,10 @@ final class LoginViewModel: ObservableObject {
             guard let code = code else {return}
             RequestManager.shared.verifyRegistrationCode(from: phoneNumber, code: code, completion: completionHandler)
         }
+    }
+    
+    func saveUserToken(token: String){
+        UserDefaults.standard.setValue(token, forKey: CustomNotificationName.changedUserToken.appStorageName)
+        NotificationCenter.default.post(name: CustomNotificationName.changedUserToken.notificationName, object: nil)
     }
 }

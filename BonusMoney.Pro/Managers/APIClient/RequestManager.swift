@@ -11,7 +11,7 @@ final class RequestManager {
     
     static let shared = RequestManager()
     
-    func requestPhoneVerification(for phoneNumber: String, verificationType: GlobalVariables.RequestVerificationType = .null, completion: @escaping (Result<PhoneVerificationModel, NetworkError>) -> Void) {
+    func requestPhoneVerification(for phoneNumber: String, verificationType: RequestVerificationType = .null, completion: @escaping (Result<PhoneVerificationModel, NetworkError>) -> Void) {
         let parameters = "{\r\n    \"countryCode\": \"RU\",\r\n    \"phone\": \"\(phoneNumber)\",\r\n    \"type\": \(verificationType.rawValue)\r\n}"
         let postData = parameters.data(using: .utf8)
 

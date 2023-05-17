@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct LocalizedMenu: View {
-//    @AppStorage("language")
-//    private var language = LocalizationService.shared.language
     @EnvironmentObject var globalVariables: GlobalVariables
     
     let action: () -> Void

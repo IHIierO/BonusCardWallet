@@ -9,23 +9,12 @@ import SwiftUI
 
 final class GlobalVariables: ObservableObject {
     
-   // static let shared = GlobalVariables()
- 
-    @AppStorage("language") var globalLanguage = LocalizationService.shared.language
-    @AppStorage("profile") var userProfile: Data?
-        
-  // @Published var globalLanguage = LocalizationService.shared.language
-    
-    enum RequestVerificationType: String {
-        case callPass = "CALL_PASS"
-        case sms = "SMS"
-        case all
-        case null = "null"
-    }
-    
-    
+    @AppStorage(CustomNotificationName.changedLanguage.appStorageName) var globalLanguage = LocalizationService.shared.language
+    @AppStorage(CustomNotificationName.changedUserProfile.appStorageName) var userProfile: Data?
+    @AppStorage(CustomNotificationName.changedUserToken.appStorageName) var userToken: String = ""
     
     @Published var requestVerificationType: RequestVerificationType = .null
+    
     @Published var phoneNextSendIn: Int = 0
     @Published var smsNextSendIn: Int = 0
 }

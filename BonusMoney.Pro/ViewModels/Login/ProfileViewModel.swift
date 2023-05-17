@@ -7,33 +7,6 @@
 
 import SwiftUI
 
-
-//final class ProfileViewModel: ObservableObject {
-//   @Published var first_name: String = ""
-//   @Published var patronymic: String = ""
-//   @Published var last_name: String = ""
-//   @Published var gift: String = ""
-//   @Published var gender: String = ""
-//   @Published var phone: String = ""
-//   @Published var mail: String = ""
-//
-//   var textFields: [Binding<String>] {
-//       return [
-//        Binding<String>(get: { self.first_name }, set: { self.first_name = $0 }),
-//        Binding<String>(get: { self.patronymic }, set: { self.patronymic = $0 }),
-//        Binding<String>(get: { self.last_name }, set: { self.last_name = $0 }),
-//        Binding<String>(get: { self.gift }, set: { self.gift = $0 }),
-//        Binding<String>(get: { self.gender }, set: { self.gender = $0 }),
-//        Binding<String>(get: { self.phone }, set: { self.phone = $0 }),
-//        Binding<String>(get: { self.mail }, set: { self.mail = $0 })
-//       ]
-//   }
-//
-//    func printProfileModel() {
-//        print("ProfileModel: \(ProfileModel(id: UUID(), first_name: first_name, patronymic: patronymic, last_name: last_name, gift: gift, gender: gender, phone: phone, mail: mail))")
-//    }
-//}
-
 enum Field {
     case textField(binding: Binding<String>)
     case picker(binding: Binding<String>)
@@ -56,9 +29,6 @@ final class ProfileViewModel: ObservableObject {
     @Published var mail: String = ""
     @Published var profilePicker: ProfilePicker?
     
-    let changedUserProfile = Notification.Name("changedUserProfile")
-    
-
     var fields: [Field] {
             return [
                 .textField(binding: Binding(get: { self.first_name }, set: { self.first_name = $0 })),
@@ -78,8 +48,8 @@ final class ProfileViewModel: ObservableObject {
         
         let profileData = try? JSONEncoder().encode(profile)
         
-        UserDefaults.standard.setValue(profileData, forKey: "profile")
-        NotificationCenter.default.post(name: changedUserProfile, object: nil)
+        UserDefaults.standard.setValue(profileData, forKey: CustomNotificationName.changedUserProfile.appStorageName)
+        NotificationCenter.default.post(name: CustomNotificationName.changedUserProfile.notificationName, object: nil)
     }
     
     func formatDate() -> Binding<String> {

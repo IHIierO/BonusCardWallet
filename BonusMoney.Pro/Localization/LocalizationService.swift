@@ -10,20 +10,19 @@ import Foundation
 class LocalizationService {
 
     static let shared = LocalizationService()
-    static let changedLanguage = Notification.Name("changedLanguage")
 
     private init() {}
     
     var language: Language {
         get {
-            guard let languageString = UserDefaults.standard.string(forKey: "language") else {
+            guard let languageString = UserDefaults.standard.string(forKey: CustomNotificationName.changedLanguage.appStorageName) else {
                 return .russian
             }
             return Language(rawValue: languageString) ?? .russian
         } set {
             if newValue != language {
-                UserDefaults.standard.setValue(newValue.rawValue, forKey: "language")
-                NotificationCenter.default.post(name: LocalizationService.changedLanguage, object: nil)
+                UserDefaults.standard.setValue(newValue.rawValue, forKey: CustomNotificationName.changedLanguage.appStorageName)
+                NotificationCenter.default.post(name: CustomNotificationName.changedLanguage.notificationName, object: nil)
             }
         }
     }
