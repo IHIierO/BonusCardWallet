@@ -14,6 +14,8 @@ struct ProfilePage: View {
     
     @State private var firstName = ""
     
+    @StateObject var viewModel = ProfileViewModel()
+    
     var body: some View {
         ZStack{
             Color.mainBackground
@@ -30,22 +32,98 @@ struct ProfilePage: View {
                 .padding(.horizontal)
                 VStack {
                     
-                    ForEach(fieldsLogo, id: \.rawValue) { field in
-                        HStack(spacing: 15){
-                            Image(field.rawValue)
-                                .resizable()
-                                .renderingMode(.template)
-                                .foregroundColor(.secondText)
-                                .frame(width: 25, height: 25, alignment: .center)
-
-                            TextField(field.textfieldPlaceholder, text: $firstName)
-                        }
-                        Divider()
-                            .overlay {
-                                Color.mainText
+                    ForEach(viewModel.fields.indices, id: \.self) { index in
+                            switch viewModel.fields[index] {
+                            case .textField(let binding):
+                                HStack {
+                                    Image(fieldsLogo[index].rawValue)
+                                        .resizable()
+                                        .renderingMode(.template)
+                                        .foregroundColor(.secondText)
+                                        .frame(width: Constants.small_icon_size, height: Constants.small_icon_size, alignment: .center)
+                                    TextField(text: binding) {
+                                        Text(fieldsLogo[index].textfieldPlaceholder)
+                                            .font(.system(size: Constants.large_text_size))
+                                    }
+                                }
+                                Divider()
+                            case .picker(let binding):
+                                HStack {
+                                    Image(fieldsLogo[index].rawValue)
+                                        .resizable()
+                                        .renderingMode(.template)
+                                        .foregroundColor(.secondText)
+                                        .frame(width: Constants.small_icon_size, height: Constants.small_icon_size, alignment: .center)
+                                    TextField(text: binding) {
+                                        Text(fieldsLogo[index].textfieldPlaceholder)
+                                            .font(.system(size: Constants.large_text_size))
+                                    }
+                                        .disabled(true)
+                                    
+                                    Menu {
+                                        Button("Male") {
+                                            viewModel.gender = "Male"
+                                        }
+                                        Button("Female") {
+                                            viewModel.gender = "Female"
+                                        }
+                                    } label: {
+                                        Image("arrow_back")
+                                            .resizable()
+                                            .renderingMode(.template)
+                                            .rotationEffect(.degrees(-90.0))
+                                            .foregroundColor(.secondText)
+                                            .frame(width: Constants.small_icon_size, height: Constants.small_icon_size, alignment: .center)
+                                    }
+                                }
+                                Divider()
+                            case .phoneTextField(let binding):
+                                HStack {
+                                    Image(fieldsLogo[index].rawValue)
+                                        .resizable()
+                                        .renderingMode(.template)
+                                        .foregroundColor(.secondText)
+                                        .frame(width: Constants.small_icon_size, height: Constants.small_icon_size, alignment: .center)
+                                    TextField(text: binding) {
+                                        Text(fieldsLogo[index].textfieldPlaceholder)
+                                            .font(.system(size: Constants.large_text_size))
+                                    }
+                                    .disabled(true)
+                                    Image("confirmation_phone")
+                                        .resizable()
+                                        .renderingMode(.template)
+                                        .foregroundColor(.secondText)
+                                        .frame(width: Constants.small_icon_size, height: Constants.small_icon_size, alignment: .center)
+                                }
+                                Divider()
+                            case .datePicker:
+                                HStack {
+                                    Image(fieldsLogo[index].rawValue)
+                                        .resizable()
+                                        .renderingMode(.template)
+                                        .foregroundColor(.secondText)
+                                        .frame(width: Constants.small_icon_size, height: Constants.small_icon_size, alignment: .center)
+                                    
+                                    TextField(text: viewModel.formatDate()) {
+                                        Text(fieldsLogo[index].textfieldPlaceholder)
+                                            .font(.system(size: Constants.large_text_size))
+                                    }
+                                        .disabled(true)
+                                    Button {
+                                        viewModel.profilePicker = .date
+                                    } label: {
+                                        Image("arrow_back")
+                                            .resizable()
+                                            .renderingMode(.template)
+                                            .rotationEffect(.degrees(-90.0))
+                                            .foregroundColor(.secondText)
+                                            .frame(width: Constants.small_icon_size, height: Constants.small_icon_size, alignment: .center)
+                                    }
+                                }
+                                Divider()
                             }
-                            .frame(height: 2)
-                    }
+                        }
+                    
                 }
                 .padding(.horizontal, 40)
                 .padding(.top, 30)
@@ -69,15 +147,33 @@ struct ProfilePage: View {
                 }
                 
                 FilledButton(title: "Продолжить", action: {
-                    
+                   viewModel.printProfileModel()
                 }, color: Color.activeElement, radius: Constants.btn_radius)
                 .padding(.horizontal, Constants.large_double_margin)
                 .padding(.top)
             }
             .ignoresSafeArea(.keyboard)
+            
+            if viewModel.profilePicker == .date {
+                CustomAlert {
+                    VStack {
+                        DatePicker("", selection: viewModel.selectedDateBinding(), in: viewModel.dateRange(), displayedComponents: .date)
+                            .datePickerStyle(.graphical)
+                            .padding([.top, .leading, .trailing])
+                            .labelsHidden()
+                            
+                        FilledButton(title: "Done", action: {
+                            viewModel.profilePicker = nil
+                        }, color: .secondary, radius: Constants.btn_radius)
+                        .padding(.vertical, Constants.small_margin)
+                        .padding(.horizontal, Constants.large_margin)
+                    }
+                } closeAction: {
+                    viewModel.profilePicker = nil
+                }
+            }
         }
     }
-    
 }
 
 struct ProfilePage_Previews: PreviewProvider {

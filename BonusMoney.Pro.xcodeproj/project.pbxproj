@@ -16,6 +16,7 @@
 		394EDA132A09125B000A3D3F /* VerifyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394EDA122A09125B000A3D3F /* VerifyPage.swift */; };
 		394EDA172A0A85AA000A3D3F /* OTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394EDA162A0A85AA000A3D3F /* OTPTextField.swift */; };
 		394EDA192A0A867C000A3D3F /* OTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394EDA182A0A867C000A3D3F /* OTPViewModel.swift */; };
+		394EDA1B2A0E4F2E000A3D3F /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394EDA1A2A0E4F2E000A3D3F /* ProfileViewModel.swift */; };
 		39D1FEA22A0251B8001825D3 /* BonusMoney_ProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FEA12A0251B8001825D3 /* BonusMoney_ProApp.swift */; };
 		39D1FEA42A0251B8001825D3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1FEA32A0251B8001825D3 /* ContentView.swift */; };
 		39D1FEA62A0251BA001825D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39D1FEA52A0251BA001825D3 /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		394EDA122A09125B000A3D3F /* VerifyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPage.swift; sourceTree = "<group>"; };
 		394EDA162A0A85AA000A3D3F /* OTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
 		394EDA182A0A867C000A3D3F /* OTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModel.swift; sourceTree = "<group>"; };
+		394EDA1A2A0E4F2E000A3D3F /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		39D1FE9E2A0251B8001825D3 /* BonusMoney.Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BonusMoney.Pro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39D1FEA12A0251B8001825D3 /* BonusMoney_ProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusMoney_ProApp.swift; sourceTree = "<group>"; };
 		39D1FEA32A0251B8001825D3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -122,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				394ED9F52A053644000A3D3F /* Config.swift */,
+				39D1FEC12A0266D7001825D3 /* Colors.swift */,
+				39D1FED32A02B0EC001825D3 /* Constants.swift */,
 			);
 			path = Cofig;
 			sourceTree = "<group>";
@@ -234,8 +238,6 @@
 			children = (
 				394ED9F42A05361D000A3D3F /* Cofig */,
 				39D1FEE32A03CE76001825D3 /* Login */,
-				39D1FEC12A0266D7001825D3 /* Colors.swift */,
-				39D1FED32A02B0EC001825D3 /* Constants.swift */,
 				39D1FEE12A03B8A9001825D3 /* NetworkError.swift */,
 				39D1FEE82A03D3D2001825D3 /* AlertModel.swift */,
 			);
@@ -272,6 +274,7 @@
 			children = (
 				39D1FEDD2A03AFCF001825D3 /* LoginViewModel.swift */,
 				394EDA182A0A867C000A3D3F /* OTPViewModel.swift */,
+				394EDA1A2A0E4F2E000A3D3F /* ProfileViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				39D1FEE02A03B6FE001825D3 /* PhoneVerificationModel.swift in Sources */,
 				39D1FEBA2A02560B001825D3 /* Language.swift in Sources */,
 				39D1FEC42A026C38001825D3 /* PhoneNumberPage.swift in Sources */,
+				394EDA1B2A0E4F2E000A3D3F /* ProfileViewModel.swift in Sources */,
 				39D1FECA2A0288D9001825D3 /* Color+MainColor.swift in Sources */,
 				394EDA172A0A85AA000A3D3F /* OTPTextField.swift in Sources */,
 				39D1FEBF2A026145001825D3 /* AlertWithOneButton.swift in Sources */,
@@ -538,6 +542,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -567,6 +572,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

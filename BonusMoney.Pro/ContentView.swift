@@ -13,7 +13,8 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            HelloView().environmentObject(globalVariables)
+            ProfilePage()
+            //HelloView().environmentObject(globalVariables)
         }
     }
 }
