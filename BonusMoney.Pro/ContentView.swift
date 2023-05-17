@@ -13,7 +13,7 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            ProfilePage()
+           ProfilePage(phone: "+7 (914) 694-89-30")
             //HelloView().environmentObject(globalVariables)
         }
     }

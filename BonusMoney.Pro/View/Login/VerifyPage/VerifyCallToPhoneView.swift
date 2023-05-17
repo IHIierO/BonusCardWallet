@@ -100,7 +100,10 @@ struct VerifyCallToPhoneView: View {
                 }
             }
             
-            NavigationLink(destination: ProfilePage(), isActive: $goToProfilePage) {
+            NavigationLink(
+                destination: ProfilePage(phone: viewModel.phoneNumber)
+                    .environmentObject(globalVariables)
+                , isActive: $goToProfilePage) {
                 EmptyView()
             }
         }

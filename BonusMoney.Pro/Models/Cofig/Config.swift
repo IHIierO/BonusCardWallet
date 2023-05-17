@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-
 final class GlobalVariables: ObservableObject {
     
-    static let shared = GlobalVariables()
+   // static let shared = GlobalVariables()
  
     @AppStorage("language") var globalLanguage = LocalizationService.shared.language
+    @AppStorage("profile") var userProfile: Data?
         
   // @Published var globalLanguage = LocalizationService.shared.language
     
@@ -22,6 +22,8 @@ final class GlobalVariables: ObservableObject {
         case all
         case null = "null"
     }
+    
+    
     
     @Published var requestVerificationType: RequestVerificationType = .null
     @Published var phoneNextSendIn: Int = 0

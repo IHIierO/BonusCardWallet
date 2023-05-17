@@ -55,6 +55,9 @@ final class ProfileViewModel: ObservableObject {
     @Published var phone: String = ""
     @Published var mail: String = ""
     @Published var profilePicker: ProfilePicker?
+    
+    let changedUserProfile = Notification.Name("changedUserProfile")
+    
 
     var fields: [Field] {
             return [
@@ -68,8 +71,15 @@ final class ProfileViewModel: ObservableObject {
             ]
         }
     
-    func printProfileModel(){
-        print("Profile Model: \(ProfileModel(id: UUID(), first_name: first_name, patronymic: patronymic, last_name: last_name, gift: "gift", gender: gender, phone: phone, mail: mail))")
+    func saveProfileModel(){
+        print("Profile Model: \(ProfileModel(first_name: first_name, patronymic: patronymic, last_name: last_name, gift: formatDate().wrappedValue, gender: gender, phone: phone, mail: mail))")
+        
+        let profile = ProfileModel(first_name: first_name, patronymic: patronymic, last_name: last_name, gift: formatDate().wrappedValue, gender: gender, phone: phone, mail: mail.lowercased())
+        
+        let profileData = try? JSONEncoder().encode(profile)
+        
+        UserDefaults.standard.setValue(profileData, forKey: "profile")
+        NotificationCenter.default.post(name: changedUserProfile, object: nil)
     }
     
     func formatDate() -> Binding<String> {

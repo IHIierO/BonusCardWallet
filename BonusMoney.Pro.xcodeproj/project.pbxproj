@@ -11,7 +11,6 @@
 		394ED9ED2A04EDBE000A3D3F /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394ED9EC2A04EDBE000A3D3F /* CountdownView.swift */; };
 		394ED9EF2A04EFD7000A3D3F /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394ED9EE2A04EFD7000A3D3F /* CustomAlert.swift */; };
 		394ED9F12A04F3E6000A3D3F /* LocalizationMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394ED9F02A04F3E6000A3D3F /* LocalizationMenu.swift */; };
-		394ED9F32A050540000A3D3F /* TestProfileTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394ED9F22A050540000A3D3F /* TestProfileTextView.swift */; };
 		394ED9F62A053644000A3D3F /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394ED9F52A053644000A3D3F /* Config.swift */; };
 		394EDA132A09125B000A3D3F /* VerifyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394EDA122A09125B000A3D3F /* VerifyPage.swift */; };
 		394EDA172A0A85AA000A3D3F /* OTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394EDA162A0A85AA000A3D3F /* OTPTextField.swift */; };
@@ -55,7 +54,6 @@
 		394ED9EC2A04EDBE000A3D3F /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
 		394ED9EE2A04EFD7000A3D3F /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		394ED9F02A04F3E6000A3D3F /* LocalizationMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationMenu.swift; sourceTree = "<group>"; };
-		394ED9F22A050540000A3D3F /* TestProfileTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProfileTextView.swift; sourceTree = "<group>"; };
 		394ED9F52A053644000A3D3F /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		394EDA122A09125B000A3D3F /* VerifyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPage.swift; sourceTree = "<group>"; };
 		394EDA162A0A85AA000A3D3F /* OTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
@@ -114,7 +112,6 @@
 				394ED9F02A04F3E6000A3D3F /* LocalizationMenu.swift */,
 				39D1FEBE2A026145001825D3 /* AlertWithOneButton.swift */,
 				39D1FECB2A028BA5001825D3 /* AlertWithTwoButtons.swift */,
-				394ED9F22A050540000A3D3F /* TestProfileTextView.swift */,
 				394EDA162A0A85AA000A3D3F /* OTPTextField.swift */,
 			);
 			path = UI;
@@ -379,7 +376,6 @@
 				39D1FEF02A03FCBF001825D3 /* Alert.swift in Sources */,
 				39D1FEB52A025588001825D3 /* Color+Hex.swift in Sources */,
 				39D1FEA42A0251B8001825D3 /* ContentView.swift in Sources */,
-				394ED9F32A050540000A3D3F /* TestProfileTextView.swift in Sources */,
 				39D1FEEE2A03F6A7001825D3 /* LocalizedMenu.swift in Sources */,
 				39D1FEE92A03D3D2001825D3 /* AlertModel.swift in Sources */,
 				39D1FEDE2A03AFD0001825D3 /* LoginViewModel.swift in Sources */,

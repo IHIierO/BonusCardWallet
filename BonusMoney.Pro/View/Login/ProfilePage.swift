@@ -11,10 +11,14 @@ struct ProfilePage: View {
     
     @State private var fieldsLogo = UserTextFieldLogo.allCases
     @State private var goToUserAgreement = false
-    
-    @State private var firstName = ""
-    
     @StateObject var viewModel = ProfileViewModel()
+    var phoneNumber: String = ""
+    
+    init(phone: String) {
+        self.phoneNumber = phone
+    }
+    
+    @EnvironmentObject var globalVariables: GlobalVariables
     
     var body: some View {
         ZStack{
@@ -45,6 +49,7 @@ struct ProfilePage: View {
                                         Text(fieldsLogo[index].textfieldPlaceholder)
                                             .font(.system(size: Constants.large_text_size))
                                     }
+                                    .foregroundColor(.mainText)
                                 }
                                 Divider()
                             case .picker(let binding):
@@ -59,7 +64,7 @@ struct ProfilePage: View {
                                             .font(.system(size: Constants.large_text_size))
                                     }
                                         .disabled(true)
-                                    
+                                        .foregroundColor(.mainText)
                                     Menu {
                                         Button("Male") {
                                             viewModel.gender = "Male"
@@ -88,11 +93,12 @@ struct ProfilePage: View {
                                         Text(fieldsLogo[index].textfieldPlaceholder)
                                             .font(.system(size: Constants.large_text_size))
                                     }
+                                    .foregroundColor(.mainText)
                                     .disabled(true)
                                     Image("confirmation_phone")
                                         .resizable()
                                         .renderingMode(.template)
-                                        .foregroundColor(.secondText)
+                                        .foregroundColor(!phoneNumber.isEmpty ? .green : .secondText)
                                         .frame(width: Constants.small_icon_size, height: Constants.small_icon_size, alignment: .center)
                                 }
                                 Divider()
@@ -109,6 +115,7 @@ struct ProfilePage: View {
                                             .font(.system(size: Constants.large_text_size))
                                     }
                                         .disabled(true)
+                                        .foregroundColor(.mainText)
                                     Button {
                                         viewModel.profilePicker = .date
                                     } label: {
@@ -147,7 +154,7 @@ struct ProfilePage: View {
                 }
                 
                 FilledButton(title: "Продолжить", action: {
-                   viewModel.printProfileModel()
+                   viewModel.saveProfileModel()
                 }, color: Color.activeElement, radius: Constants.btn_radius)
                 .padding(.horizontal, Constants.large_double_margin)
                 .padding(.top)
@@ -173,11 +180,21 @@ struct ProfilePage: View {
                 }
             }
         }
+        .onAppear{
+            viewModel.phone = phoneNumber
+            guard let data = globalVariables.userProfile else {
+                return
+            }
+            let userProfile = try? JSONDecoder().decode(ProfileModel.self, from: data)
+            print("Global user Profile: \(userProfile)")
+        }
     }
 }
 
 struct ProfilePage_Previews: PreviewProvider {
     static var previews: some View {
-        ProfilePage()
+        @ObservedObject var globalVariables = GlobalVariables()
+        ProfilePage(phone: "+7 (914) 694-89-30")
+            .environmentObject(globalVariables)
     }
 }

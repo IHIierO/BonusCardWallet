@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-struct ProfileModel: Identifiable {
-    var id: UUID
+struct ProfileModel: Codable {
     var first_name: String
     var patronymic: String
     var last_name: String
